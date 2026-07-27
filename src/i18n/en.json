@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "title": "Siem Reap Art Center Night Market Guide | Khmer Culture & Visitor Information",
+    "description": "A non-profit visitor guide providing information about Siem Reap Art Center Night Market, including location, opening hours, transportation and visitor tips.",
+    "keywords": "Siem Reap Art Center Night Market, Siem Reap night market, Cambodia travel guide, 暹粒夜市, 柬埔寨旅游"
+  },
+  "header": {
+    "siteName": "Siem Reap Art Center Night Market",
+    "nav": {
+      "overview": "Overview",
+      "about": "About",
+      "experience": "Experience",
+      "hours": "Hours",
+      "transport": "Getting There",
+      "faq": "FAQ"
+    }
+  },
+  "hero": {
+    "eyebrow": "Siem Reap · Cambodia",
+    "title": "Siem Reap Art Center Night Market",
+    "subtitle": "Explore local crafts, Cambodian culture and evening market atmosphere in Siem Reap.",
+    "ctaMap": "View Map",
+    "ctaInfo": "Visitor Information"
+  },
+  "info": {
+    "title": "Attraction Information",
+    "labels": {
+      "name": "Name",
+      "type": "Type",
+      "address": "Address",
+      "coordinates": "Coordinates",
+      "plusCode": "Plus Code"
+    },
+    "nameVal": "Siem Reap Art Center Night Market",
+    "typeVal": "Night Market",
+    "addressVal": "9V24+W2F, 17000 Hospital St, Krong Siem Reap, Cambodia",
+    "coordsVal": "13.35228, 103.85231",
+    "plusCodeVal": "9V24+W2F",
+    "mapCta": "Open in Google Maps"
+  },
+  "about": {
+    "title": "About Siem Reap Art Center Night Market",
+    "body": [
+      "The Siem Reap Art Center Night Market is an evening market space in Siem Reap, Cambodia, where locals and visitors gather after dark to browse stalls, enjoy food, and take in the town's nightlife.",
+      "Like other night markets across Cambodia and Southeast Asia, it reflects an everyday urban rhythm — a relaxed public space shaped by local commerce rather than formal tourism.",
+      "Small stalls offer handmade goods, traditional artworks, and souvenirs, while the surrounding area highlights Cambodian local arts and the casual culture of street-side evening life."
+    ]
+  },
+  "opening": {
+    "title": "Opening Hours",
+    "daysLabel": "Monday – Saturday",
+    "daysTime": "16:00 – 23:00",
+    "sundayLabel": "Sunday",
+    "sundayStatus": "Closed",
+    "note": "Opening hours may change during holidays or special events."
+  },
+  "experience": {
+    "title": "What Visitors Can Experience",
+    "intro": "A calm evening space to observe local life, crafts, and food culture in Siem Reap.",
+    "items": [
+      {
+        "icon": "🧶",
+        "title": "Local Handicrafts",
+        "desc": "Browse handmade goods, traditional artworks, and souvenir culture from local makers.",
+        "bullets": ["Handmade products", "Traditional artworks", "Souvenir culture"]
+      },
+      {
+        "icon": "🍜",
+        "title": "Cambodian Food Culture",
+        "desc": "Learn about local snacks, street food, and the eating habits of the night market.",
+        "bullets": ["Local snacks", "Street food", "Night-market dining"]
+      },
+      {
+        "icon": "🌃",
+        "title": "Evening Atmosphere",
+        "desc": "Enjoy the lighting, take an evening walk, and observe everyday local life.",
+        "bullets": ["Market lighting", "Evening strolls", "Local life watching"]
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Facilities & Nearby Services",
+    "accessibility": {
+      "title": "Accessibility",
+      "body": "Accessibility information is limited. Visitors requiring assistance are advised to contact local facilities before visiting."
+    },
+    "wc": {
+      "title": "Restrooms / WC",
+      "body": "Public restroom availability may vary. Visitors should check nearby public facilities."
+    },
+    "parking": {
+      "title": "Parking Information",
+      "body": "Parking areas may exist in the surrounding streets. Peak evening hours can be crowded; walking or public transport is recommended."
+    },
+    "nearby": {
+      "title": "Nearby Services",
+      "items": [
+        { "title": "Nearby Food Options", "desc": "The surrounding area usually has local restaurants, street-food stalls, and drink shops." },
+        { "title": "Accommodation Information", "desc": "The area includes hotels, guesthouses, and hostels. No specific lodging is recommended here." },
+        { "title": "Shopping Facilities", "desc": "Convenience stores and daily-goods shops can be found nearby." },
+        { "title": "Fuel & EV Charging", "desc": "Self-driving visitors can find fuel services in the city area; EV charging points may be limited." }
+      ]
+    }
+  },
+  "safety": {
+    "title": "Visitor Safety Tips",
+    "items": [
+      { "icon": "👜", "title": "Keep Belongings Safe", "desc": "Crowded markets call for basic care with bags and phones." },
+      { "icon": "🚦", "title": "Watch Night Traffic", "desc": "Stay alert near roads and tuk-tuk lanes after dark." },
+      { "icon": "🙏", "title": "Respect Local Culture", "desc": "Be considerate of local customs and market etiquette." },
+      { "icon": "💵", "title": "Handle Cash Carefully", "desc": "Keep small notes handy and stay aware of your wallet." },
+      { "icon": "🤝", "title": "Don't Disrupt Vendors", "desc": "Avoid blocking stalls or disturbing vendors' business." }
+    ]
+  },
+  "transport": {
+    "title": "How To Get There",
+    "intro": "The market sits within Siem Reap town, within reach of most central areas. Below are practical ways to reach it.",
+    "airport": {
+      "icon": "✈️",
+      "title": "From Siem Reap International Airport",
+      "desc": "The airport is located outside the town (about 50 km from the center). The trip to the city generally takes 45–60 minutes by road.",
+      "steps": [
+        "After collecting your luggage, go to the official taxi or tuk-tuk counter in the arrivals hall.",
+        "Arrange a ride to 'Art Center Night Market' or 'Hospital Street (17000), Siem Reap'.",
+        "Confirm the drop-off point near the riverside entrance of the night market.",
+        "Keep the market's map location or Plus Code (9V24+W2F) handy to show the driver."
+      ]
+    },
+    "modesTitle": "From Within Siem Reap",
+    "modes": [
+      {
+        "icon": "🚶",
+        "title": "Walking",
+        "desc": "Suitable for visitors staying near the town center.",
+        "steps": [
+          "From Pub Street or the Old Market area, head south toward the Siem Reap River.",
+          "Cross the river and continue to Hospital Street (Street 17000).",
+          "The market entrance is along the riverside promenade — about 10–15 minutes on foot."
+        ]
+      },
+      {
+        "icon": "🛺",
+        "title": "Tuk Tuk",
+        "desc": "A common and flexible way to get around Siem Reap.",
+        "steps": [
+          "Ask your hotel or a street tuk-tuk driver for a ride to 'Art Center Night Market'.",
+          "Show the driver the map location or Plus Code 9V24+W2F if needed.",
+          "Most trips from the town center take about 5–15 minutes depending on traffic."
+        ]
+      },
+      {
+        "icon": "🚲",
+        "title": "Bicycle",
+        "desc": "Good for short-distance movement around town.",
+        "steps": [
+          "Rent a bicycle from your guesthouse or a local shop.",
+          "Follow the riverside road south toward Hospital Street.",
+          "Park your bike at the edge of the market area; always use a lock."
+        ]
+      },
+      {
+        "icon": "🚕",
+        "title": "Car / Taxi",
+        "desc": "Comfortable for families and groups.",
+        "steps": [
+          "Book a taxi or use a ride arranged by your hotel.",
+          "Set the destination as 'Art Center Night Market, Hospital Street'.",
+          "Ask to be dropped near the main riverside entrance."
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Gallery",
+    "intro": "A glimpse of the night market, local crafts, food culture, and street atmosphere in Siem Reap.",
+    "credits": "Image credits belong to original photographers.",
+    "categories": ["Night Market View", "Local Crafts", "Food Culture", "Street Atmosphere"],
+    "alts": [
+      "Siem Reap Art Center Night Market lit up after dark",
+      "Stalls along the night market promenade",
+      "Local handicrafts and souvenirs on display",
+      "Cambodian street food cooking at the market",
+      "Handmade textile and craft products",
+      "Night market street scene with visitors",
+      "Traditional Cambodian artwork on sale",
+      "Evening atmosphere around the market",
+      "Shoppers browsing local craft goods",
+      "Local snacks and drinks at the night market",
+      "Colorful stalls at the Art Center Night Market",
+      "Street life near the Siem Reap night market",
+      "Night market entrance near the river",
+      "Rows of small vendor booths at night",
+      "Handwoven textiles and local fabrics",
+      "Carved wooden souvenirs on a table",
+      "Cambodian silver and bead jewelry",
+      "A food stall serving grilled snacks",
+      "Lanterns and string lights over the lane",
+      "Shoppers browsing handmade goods",
+      "Paintings by local Cambodian artists",
+      "Silk scarves and traditional clothing",
+      "Evening crowd along the promenade",
+      "Reflections of market lights by the water"
+    ]
+  },
+  "map": {
+    "title": "Location & Map",
+    "caption": "Siem Reap Art Center Night Market · 17000 Hospital St, Krong Siem Reap, Cambodia"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "q": "What time does Siem Reap Art Center Night Market open?",
+        "a": "Usually from 16:00 to 23:00, Monday to Saturday. Hours may change."
+      },
+      {
+        "q": "Is there an entrance fee?",
+        "a": "The market generally does not require a general admission ticket."
+      },
+      {
+        "q": "Is it suitable for families?",
+        "a": "Visitors of different ages can experience the evening market atmosphere."
+      },
+      {
+        "q": "What can visitors buy?",
+        "a": "Visitors may find local handicrafts, souvenirs and cultural products."
+      }
+    ]
+  },
+  "footer": {
+    "siteName": "Siem Reap Art Center Night Market",
+    "tagline": "An independent non-profit visitor information guide — not a booking or commercial site.",
+    "disclaimer": "This website is an independent non-profit visitor information project and is not affiliated with any government agency or official organization. Information is compiled from publicly available tourism resources and official public information sources for educational purposes only. No commercial recommendations or services are provided. All images displayed on this website belong to their respective photographers and copyright owners.",
+    "rights": "© {year} Siem Reap Art Center Night Market Guide. Non-profit travel information.",
+    "navTitle": "Sections",
+    "langTitle": "Languages",
+    "links": {
+      "maps": "View on Google Maps",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Settings"
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        { "h": "Overview", "p": "This non-profit guide does not sell products or services and does not require user accounts. We collect only the minimal technical data needed to serve the site." },
+        { "h": "Analytics & Logs", "p": "Standard server logs (such as access time and page viewed) may be processed to keep the site running. No personally identifying profiles are built or shared." },
+        { "h": "Cookies", "p": "The site may use essential cookies only. We do not use advertising or tracking cookies across third-party sites." },
+        { "h": "External Links", "p": "Links to maps and other external services are provided for reference; their privacy practices are governed by those providers." },
+        { "h": "Contact", "p": "For questions about this policy, reach out through the project's public channels." }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "sections": [
+        { "h": "Informational Use", "p": "All content is provided for general visitor information and is compiled from public sources. It is not official advice." },
+        { "h": "No Commercial Endorsement", "p": "This site makes no commercial recommendations and is not affiliated with any vendor, venue, or government body." },
+        { "h": "Accuracy", "p": "While we aim to keep information current, opening hours, access, and services may change. Verify details before your visit." },
+        { "h": "Liability", "p": "The project is not liable for decisions made based on the information provided here." }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "sections": [
+        { "h": "Essential Cookies", "p": "Required for the site to function, such as remembering language preference. These cannot be switched off." },
+        { "h": "Analytics Cookies", "p": "Used only in aggregate to understand basic traffic. We keep these to a minimum." },
+        { "h": "Your Choice", "p": "You can disable non-essential cookies in your browser. The site remains fully usable without them." }
+      ]
+    }
+  }
+}

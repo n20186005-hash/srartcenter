@@ -1,0 +1,39 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const fac = messages.facilities;
+---
+
+<section id="facilities" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{fac.title}</h2>
+
+  <div class="mt-8 grid gap-5 md:grid-cols-3">
+    <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+      <div class="grid h-12 w-12 place-items-center rounded-xl bg-sand text-2xl">♿</div>
+      <h3 class="mt-4 text-lg font-bold text-brown">{fac.accessibility.title}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-brown/70">{fac.accessibility.body}</p>
+    </div>
+    <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+      <div class="grid h-12 w-12 place-items-center rounded-xl bg-sand text-2xl">🚻</div>
+      <h3 class="mt-4 text-lg font-bold text-brown">{fac.wc.title}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-brown/70">{fac.wc.body}</p>
+    </div>
+    <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+      <div class="grid h-12 w-12 place-items-center rounded-xl bg-sand text-2xl">🅿️</div>
+      <h3 class="mt-4 text-lg font-bold text-brown">{fac.parking.title}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-brown/70">{fac.parking.body}</p>
+    </div>
+  </div>
+
+  <h3 class="mt-10 text-xl font-bold text-brown">{fac.nearby.title}</h3>
+  <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      fac.nearby.items.map((item: any) => (
+        <div class="rounded-2xl border border-black/5 bg-sand/60 p-5">
+          <h4 class="text-base font-semibold text-brown">{item.title}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-brown/70">{item.desc}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

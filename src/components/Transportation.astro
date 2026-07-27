@@ -1,0 +1,55 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const tr = messages.transport;
+---
+
+<section id="transport" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{tr.title}</h2>
+  <p class="mt-2 max-w-2xl text-brown/70">{tr.intro}</p>
+
+  {/* Airport route */}
+  <div class="mt-8 rounded-2xl border border-orange/30 bg-gradient-to-br from-orange/5 to-sand/40 p-6 shadow-sm">
+    <div class="flex items-start gap-4">
+      <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-orange text-2xl text-white">{tr.airport.icon}</div>
+      <div class="min-w-0">
+        <h3 class="text-xl font-bold text-brown">{tr.airport.title}</h3>
+        <p class="mt-2 text-sm leading-relaxed text-brown/70">{tr.airport.desc}</p>
+      </div>
+    </div>
+    <ol class="mt-5 space-y-3">
+      {
+        tr.airport.steps.map((s: string, i: number) => (
+          <li class="flex gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brown text-sm font-bold text-white">{i + 1}</span>
+            <span class="text-sm leading-relaxed text-brown/80">{s}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  {/* Other modes */}
+  <h3 class="mt-10 text-lg font-semibold text-brown">{tr.modesTitle}</h3>
+  <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      tr.modes.map((m: any) => (
+        <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+          <div class="grid h-12 w-12 place-items-center rounded-xl bg-sand text-2xl">{m.icon}</div>
+          <h4 class="mt-4 text-lg font-bold text-brown">{m.title}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-brown/70">{m.desc}</p>
+          <ol class="mt-4 space-y-2 border-t border-black/5 pt-4">
+            {
+              m.steps.map((s: string, i: number) => (
+                <li class="flex gap-2 text-xs leading-relaxed text-brown/70">
+                  <span class="font-bold text-orange">{i + 1}.</span>
+                  <span>{s}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      ))
+    }
+  </div>
+</section>

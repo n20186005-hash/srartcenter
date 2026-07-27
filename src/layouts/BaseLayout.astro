@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
+import { ogLocale, siteConfig, attraction } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const htmlLang = htmlLangAttr(lang);
+const alts = buildAlternates();
+const canonical = alts[lang] ?? alts.km;
+const { messages } = getI18n(Astro.url);
+const pageTitle = title ?? messages.meta.title;
+const pageDesc = description ?? messages.meta.description;
+const attractionName = messages.header.siteName;
+const year = new Date().getFullYear();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: attractionName,
+  description: pageDesc,
+  url: canonical,
+  image: `${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '17000 Hospital St',
+    addressLocality: 'Krong Siem Reap',
+    addressCountry: attraction.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: attraction.lat,
+    longitude: attraction.lng,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: attraction.hoursOpen,
+      closes: attraction.hoursClose,
+    },
+  ],
+  isAccessibleForFree: true,
+  sameAs: [attraction.mapsUrl],
+};
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    {messages.meta.keywords && <meta name="keywords" content={messages.meta.keywords} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="km" href={alts.km} />
+    <link rel="alternate" hreflang="en" href={alts.en} />
+    <link rel="alternate" hreflang="zh" href={alts.zh} />
+    <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale[lang] ?? lang} />
+    <meta property="og:image" content={`${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

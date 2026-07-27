@@ -1,0 +1,97 @@
+---
+import { getLangFromUrl, getI18n, langOrder, languages } from '../i18n/ui';
+import { attraction, siteConfig } from '../config/site';
+
+const lang = getLangFromUrl(Astro.url);
+const { messages } = getI18n(Astro.url);
+const f = messages.footer;
+
+const year = new Date().getFullYear();
+const rights = f.rights.replace('{year}', String(year));
+
+const sectionNav = [
+  { key: 'overview', href: '#overview' },
+  { key: 'about', href: '#about' },
+  { key: 'experience', href: '#experience' },
+  { key: 'hours', href: '#hours' },
+  { key: 'transport', href: '#transport' },
+  { key: 'faq', href: '#faq' },
+];
+
+const langHrefs: Record<string, string> = {
+  km: '/',
+  en: '/en/',
+  zh: '/zh/',
+};
+
+const legalBase = lang === 'km' ? '' : `/${lang}`;
+const legalHrefs: Record<string, string> = {
+  privacy: `${legalBase}/privacy-policy`,
+  terms: `${legalBase}/terms-of-service`,
+  cookies: `${legalBase}/cookie-settings`,
+};
+---
+
+<footer class="mt-8 bg-[#2B1A12] text-orange-50">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <div class="flex items-center gap-2 font-bold text-white">
+        <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand text-white">🏮</span>
+        <span>{f.siteName}</span>
+      </div>
+      <p class="mt-4 max-w-md text-sm text-orange-100/80">{f.tagline}</p>
+      <a
+        href={attraction.mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
+      >
+        🗺️ {f.links.maps}
+      </a>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-gold">{f.navTitle}</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          sectionNav.map((item) => (
+            <li>
+              <a href={item.href} class="text-orange-100/80 transition hover:text-white">
+                {messages.header.nav[item.key]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-gold">{f.langTitle}</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          langOrder.map((l) => (
+            <li>
+              <a href={langHrefs[l]} hreflang={l} class="text-orange-100/80 transition hover:text-white">
+                {languages[l]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-orange-100/70 sm:flex-row sm:items-center sm:justify-between">
+      <p class="max-w-3xl">{f.disclaimer}</p>
+    </div>
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-6 text-xs text-orange-100/70 sm:flex-row sm:items-center sm:justify-between">
+      <p>{rights}</p>
+      <ul class="flex flex-wrap gap-4">
+        <li><a href={legalHrefs.privacy} class="transition hover:text-white">{f.links.privacy}</a></li>
+        <li><a href={legalHrefs.terms} class="transition hover:text-white">{f.links.terms}</a></li>
+        <li><a href={legalHrefs.cookies} class="transition hover:text-white">{f.links.cookies}</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

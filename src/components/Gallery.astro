@@ -1,0 +1,40 @@
+---
+import { getI18n } from '../i18n/ui';
+import { siteConfig } from '../config/site';
+const { messages } = getI18n(Astro.url);
+const g = messages.gallery;
+const slug = siteConfig.slug;
+---
+
+<section id="gallery" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{g.title}</h2>
+  <p class="mt-2 max-w-2xl text-brown/70">{g.intro}</p>
+
+  <div class="mt-4 flex flex-wrap gap-2">
+    {
+      g.categories.map((c: string) => (
+        <span class="rounded-full bg-sand px-3 py-1 text-xs font-medium text-brand-dark">{c}</span>
+      ))
+    }
+  </div>
+
+  <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+    {
+      g.alts.map((alt: string, i: number) => (
+        <div class="group overflow-hidden rounded-2xl bg-sand ring-1 ring-black/5">
+          <img
+            src={`/gallery/${slug}-${i + 1}.jpg`}
+            alt={alt}
+            width="400"
+            height="300"
+            loading="lazy"
+            decoding="async"
+            class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="mt-4 text-xs text-brown/50">© {g.credits}</p>
+</section>

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Khmer", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+
+  /* Cambodian cultural warm palette */
+  --color-brand: #E2722B;
+  --color-brand-dark: #B8531A;
+  --color-brown: #3B2A20;
+  --color-gold: #C9A24B;
+  --color-sand: #F5EBDD;
+  --color-cream: #FBF4EA;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #FBF4EA;
+  color: #2B2018;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Warm "night market" hero background */
+.bg-night {
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(226, 114, 43, 0.55) 0%, rgba(59, 42, 32, 0.92) 55%, rgba(28, 18, 12, 1) 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Section anchor spacing for the fixed header */
+.anchor-offset {
+  scroll-margin-top: 5rem;
+}

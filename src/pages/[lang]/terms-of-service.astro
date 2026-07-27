@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/LegalPage.astro';
+import { languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList
+    .filter((l) => l !== 'km')
+    .map((lang) => ({ params: { lang } }));
+}
+---
+
+<BaseLayout>
+  <LegalPage section="terms" />
+</BaseLayout>

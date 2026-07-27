@@ -1,0 +1,12 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const about = messages.about;
+---
+
+<section id="about" class="anchor-offset mx-auto max-w-3xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{about.title}</h2>
+  <div class="mt-6 space-y-4 text-base leading-relaxed text-brown/80">
+    {about.body.map((p: string) => <p>{p}</p>)}
+  </div>
+</section>

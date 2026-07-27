@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, getI18n } from '../i18n/ui';
+
+interface Props {
+  section: 'privacy' | 'terms' | 'cookies';
+}
+
+const { section } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const { messages } = getI18n(Astro.url);
+const legal = messages.legal[section];
+const siteName = messages.footer.siteName;
+---
+
+<section class="anchor-offset mx-auto max-w-3xl px-4 py-20">
+  <h1 class="text-3xl font-bold text-brown">{legal.title}</h1>
+  <p class="mt-2 text-sm text-brown/60">{siteName}</p>
+
+  <div class="mt-8 space-y-6">
+    {
+      legal.sections.map((s: any) => (
+        <div>
+          <h2 class="text-lg font-semibold text-brown">{s.h}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-brown/75">{s.p}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
