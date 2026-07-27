@@ -29,7 +29,7 @@ export const attraction = {
   plusCode: '9V24+W2F',
   address: '9V24+W2F, 17000 Hospital St, Krong Siem Reap, Cambodia',
   // No commercial ranking / ratings are asserted; this is an informational guide.
-  mapsUrl: 'https://www.google.com/maps?q=13.352276586944907,103.85230731225379',
+  mapsUrl: 'https://maps.app.goo.gl/9SU1KZSJxURa8Rci7',
   embedUrl: 'https://www.google.com/maps?q=13.352276586944907,103.85230731225379&output=embed',
   country: 'KH',
   hoursOpen: '16:00',
