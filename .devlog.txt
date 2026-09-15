@@ -1,3 +1,16 @@
-[2m14:48:03[22m [34m[@astrojs/cloudflare][39m Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
-[2m14:48:03[22m [34m[@astrojs/cloudflare][39m If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
-[33m[1m14:48:03[22m [WARN] [adapter][39m Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+[2m17:27:26[22m [34m[@astrojs/cloudflare][39m Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+[2m17:27:26[22m [34m[@astrojs/cloudflare][39m If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
+[33m[1m17:27:26[22m [WARN] [adapter][39m Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+[2m17:27:26[22m [34m[types][39m Generated [2m18ms[22m
+[2m17:27:26[22m [34m[content][39m Syncing content
+[2m17:27:27[22m [34m[content][39m Synced content
+[2m17:27:27[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+
+[42m[1m astro [22m[49m [32mv5.18.2[39m [2mready in[22m 2527 [2mms[22m
+
+[2m┃[22m Local    [36mhttp://localhost:4488/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+
+[2m17:27:27[22m [32mwatching for file changes...[39m
+[33m[1m17:27:36[22m [WARN] [router][39m getStaticPaths() ignored in dynamic page [1m/src/pages/[lang]/index.astro[22m. Add `export const prerender = true;` to prerender the page as static HTML during the build process.
+[2m17:27:37[22m [34m[200][39m /en/ [2m320ms[22m
