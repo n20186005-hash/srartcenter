@@ -1,0 +1,41 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction, siteConfig } from '../config/site';
+
+const { messages } = getI18n(Astro.url);
+const e = messages.entity;
+const b = messages.breadcrumb;
+
+// Renders **bold** markers from the translation strings.
+const bold = (value: string = ''): string =>
+  value.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-brown">$1</strong>');
+
+// Geographic hierarchy: attraction full name -> city -> province -> country
+const hierarchy = [messages.info.nameVal, b.city, b.province, b.country];
+---
+
+<section id="entity" class="anchor-offset mx-auto max-w-3xl px-4 pb-4 pt-10">
+  <p class="text-xs font-semibold uppercase tracking-wide text-brand-dark">{e.eyebrow}</p>
+
+  <p class="mt-4 text-lg leading-relaxed text-brown/85" set:html={bold(e.welcome)}></p>
+  <p class="mt-4 text-base leading-relaxed text-brown/75" set:html={bold(e.cluster)}></p>
+  <p class="mt-4 text-sm leading-relaxed text-brown/60" set:html={bold(e.domainNote)}></p>
+
+  <div class="mt-6 rounded-2xl border border-black/5 bg-sand/60 p-4">
+    <p class="text-xs font-semibold uppercase tracking-wide text-brand-dark">{e.trailLabel}</p>
+    <p class="mt-2 flex flex-wrap items-center gap-2 text-sm text-brown/80">
+      {
+        hierarchy.map((part, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true" class="text-brand/60">→</span>}
+            <span class={i === 0 ? 'font-semibold text-brown' : ''}>{part}</span>
+          </>
+        ))
+      }
+    </p>
+  </div>
+
+  <p class="mt-4 text-xs leading-relaxed text-brown/50">
+    {attraction.fullName} · {siteConfig.domain} · {attraction.plusCode}
+  </p>
+</section>

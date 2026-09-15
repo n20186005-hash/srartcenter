@@ -11,10 +11,18 @@ const rights = f.rights.replace('{year}', String(year));
 
 const sectionNav = [
   { key: 'overview', href: '#overview' },
+  { key: 'weather', href: '#weather' },
+  { key: 'seasons', href: '#seasons' },
+  { key: 'routes', href: '#routes' },
+  { key: 'audiences', href: '#audiences' },
   { key: 'about', href: '#about' },
   { key: 'experience', href: '#experience' },
   { key: 'hours', href: '#hours' },
   { key: 'transport', href: '#transport' },
+  { key: 'facilities', href: '#facilities' },
+  { key: 'science', href: '#science' },
+  { key: 'reviews', href: '#reviews' },
+  { key: 'sources', href: '#sources' },
   { key: 'faq', href: '#faq' },
 ];
 
@@ -40,14 +48,28 @@ const legalHrefs: Record<string, string> = {
         <span>{f.siteName}</span>
       </div>
       <p class="mt-4 max-w-md text-sm text-orange-100/80">{f.tagline}</p>
-      <a
-        href={attraction.mapsUrl}
-        target="_blank"
-        rel="noopener"
-        class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
-      >
-        🗺️ {f.links.maps}
-      </a>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a
+          href={attraction.mapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
+        >
+          🗺️ {f.links.maps}
+        </a>
+        <a
+          href={attraction.mapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-orange-50 transition hover:bg-white/10"
+        >
+          ⭐ {f.links.reviews} ↗
+        </a>
+      </div>
+      <p class="mt-4 max-w-md text-xs leading-relaxed text-orange-100/70">{f.imageCredits}</p>
+      <p class="mt-2 max-w-md text-xs leading-relaxed text-orange-100/60">
+        {messages.reviews.sourceNote}
+      </p>
     </div>
 
     <div>

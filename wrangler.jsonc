@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "srartcenter",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  // Static output (images, icons, prerendered legal pages, _astro bundles) is served
+  // straight from the assets binding; every other request is handled by the Worker,
+  // which renders the guide pages and their live weather block.
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

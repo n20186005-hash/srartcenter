@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LegalPage from '../components/LegalPage.astro';
+import { legalMeta } from '../i18n/ui';
+
+// Prerendered: legal text never changes per request.
+export const prerender = true;
+
+const meta = legalMeta(Astro.url, 'privacy');
 ---
 
-<BaseLayout>
+<BaseLayout pageType="legal" title={meta.title} description={meta.description}>
   <LegalPage section="privacy" />
 </BaseLayout>

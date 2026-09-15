@@ -35,18 +35,60 @@ export function getI18n(url: URL) {
   return { lang, messages, t };
 }
 
-export function buildAlternates(): Record<string, string> {
+// Section path of the current page, without the locale prefix
+// e.g. "/privacy-policy" -> "privacy-policy", "/en/" -> "", "/zh/terms-of-service" -> "terms-of-service"
+function sectionPathFromUrl(url?: URL): string {
+  if (!url) return '';
+  return url.pathname
+    .split('/')
+    .filter(Boolean)
+    .filter((seg) => seg !== 'index.html' && !(languagesList as readonly string[]).includes(seg))
+    .join('/');
+}
+
+// Per-locale absolute URLs (hreflang + canonical) for the current page.
+// Khmer keeps the unprefixed root because it is the site's default locale, so
+// x-default deliberately points at the English page instead: it is the version
+// served to visitors whose language is not km, en or zh.
+export function buildAlternates(url?: URL): Record<string, string> {
   const base = siteConfig.baseUrl;
+  const section = sectionPathFromUrl(url);
+  const suffix = section ? `/${section}` : '';
+  const en = `${base}/en${suffix}/`;
   return {
-    km: `${base}/`,
-    en: `${base}/en/`,
-    zh: `${base}/zh/`,
-    xDefault: `${base}/`,
+    km: `${base}${suffix}/`,
+    en,
+    zh: `${base}/zh${suffix}/`,
+    xDefault: en,
   };
+}
+
+// Canonical URL of the page currently being rendered.
+export function canonicalUrl(url?: URL): string {
+  if (!url) return `${siteConfig.baseUrl}/`;
+  const section = sectionPathFromUrl(url);
+  const suffix = section ? `/${section}` : '';
+  const prefix = url.pathname.startsWith('/zh') ? '/zh' : url.pathname.startsWith('/en') ? '/en' : '';
+  return `${siteConfig.baseUrl}${prefix}${suffix}/`;
 }
 
 export function htmlLangAttr(lang: string): string {
   if (lang === 'zh') return 'zh-CN';
   if (lang === 'km') return 'km';
   return lang;
+}
+
+// Unique <title> / meta description for the legal (privacy / terms / cookies) pages,
+// so every URL keeps a distinct title instead of reusing the attraction title.
+export function legalMeta(
+  url: URL,
+  section: 'privacy' | 'terms' | 'cookies'
+): { title: string; description: string } {
+  const { messages } = getI18n(url);
+  const block = messages.legal?.[section];
+  const first: string = block?.sections?.[0]?.p ?? messages.footer?.tagline ?? '';
+  return {
+    title: `${block?.title ?? section} — ${messages.header.siteName}`,
+    description: first.length > 158 ? `${first.slice(0, 155)}…` : first,
+  };
 }

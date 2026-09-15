@@ -1,0 +1,56 @@
+{
+  "id": "/?source=pwa",
+  "name": "Siem Reap Art Center Night Market — Visitor Guide",
+  "short_name": "SR Art Center",
+  "description": "Visitor guide to Siem Reap Art Center Night Market (暹粒藝術中心夜市 / មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប) in Siem Reap, Siem Reap Province, Cambodia: location, map, opening hours and travel tips.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#FBF4EA",
+  "theme_color": "#E2722B",
+  "lang": "km",
+  "dir": "ltr",
+  "categories": ["travel", "navigation", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Location & Map",
+      "short_name": "Map",
+      "url": "/#location",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Opening Hours",
+      "short_name": "Hours",
+      "url": "/#hours",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ratings & Reviews",
+      "short_name": "Reviews",
+      "url": "/#reviews",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

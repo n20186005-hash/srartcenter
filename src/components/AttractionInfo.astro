@@ -1,6 +1,6 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { attraction, siteConfig } from '../config/site';
+import { attraction } from '../config/site';
 const { messages } = getI18n(Astro.url);
 const info = messages.info;
 
@@ -8,8 +8,11 @@ const rows = [
   { label: info.labels.name, value: info.nameVal },
   { label: info.labels.type, value: info.typeVal },
   { label: info.labels.address, value: info.addressVal },
+  { label: info.labels.city, value: info.cityVal },
+  { label: info.labels.country, value: info.countryVal },
   { label: info.labels.coordinates, value: info.coordsVal },
   { label: info.labels.plusCode, value: info.plusCodeVal },
+  { label: info.labels.phone, value: attraction.phoneDisplay, href: `tel:${attraction.phone}` },
 ];
 ---
 
@@ -21,7 +24,13 @@ const rows = [
       rows.map((row) => (
         <div class="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
           <p class="text-xs font-semibold uppercase tracking-wide text-brand-dark">{row.label}</p>
-          <p class="mt-2 text-base font-medium text-brown">{row.value}</p>
+          {row.href ? (
+            <a href={row.href} class="mt-2 block text-base font-medium text-brown transition hover:text-brand-dark">
+              {row.value}
+            </a>
+          ) : (
+            <p class="mt-2 text-base font-medium text-brown">{row.value}</p>
+          )}
         </div>
       ))
     }
@@ -29,7 +38,7 @@ const rows = [
       <a
         href={attraction.mapsUrl}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark"
       >
         🗺️ {info.mapCta}

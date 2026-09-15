@@ -1,26 +1,48 @@
 {
   "meta": {
-    "title": "Siem Reap Art Center Night Market Guide | Khmer Culture & Visitor Information",
-    "description": "A non-profit visitor guide providing information about Siem Reap Art Center Night Market, including location, opening hours, transportation and visitor tips.",
-    "keywords": "Siem Reap Art Center Night Market, Siem Reap night market, Cambodia travel guide, 暹粒夜市, 柬埔寨旅游"
+    "title": "Siem Reap Art Center Night Market: Hours, Location & Guide",
+    "description": "Night market on Hospital St in central Siem Reap, open Monday to Saturday 16:00–23:00. Handmade crafts, Khmer street food and souvenirs, with map and directions.",
+    "keywords": "Siem Reap Art Center Night Market, Siem Reap Art Center, Siem Reap night market, night market Siem Reap opening hours, Art Centre Night Market, Hospital St Siem Reap, Cambodia travel guide, 暹粒藝術中心夜市, 暹粒艺术中心夜市, មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប",
+    "ogTitle": "Siem Reap Art Center Night Market — Hours, Location & Guide",
+    "ogDescription": "Open Monday to Saturday 16:00–23:00 on Hospital St, Siem Reap. Crafts, street food and souvenirs in the town centre.",
+    "ogImageAlt": "Siem Reap Art Center Night Market in Siem Reap",
+    "guideEdition": "Guide edition"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb",
+    "home": "Home",
+    "city": "Siem Reap",
+    "province": "Siem Reap Province",
+    "country": "Cambodia"
   },
   "header": {
     "siteName": "Siem Reap Art Center Night Market",
     "nav": {
+      "weather": "Weather",
+      "seasons": "Seasons",
+      "routes": "Routes",
+      "audiences": "Plans",
+      "facilities": "Facilities",
+      "science": "Understand",
       "overview": "Overview",
       "about": "About",
       "experience": "Experience",
       "hours": "Hours",
       "transport": "Getting There",
+      "reviews": "Reviews",
+      "sources": "Sources",
       "faq": "FAQ"
     }
   },
   "hero": {
     "eyebrow": "Siem Reap · Cambodia",
-    "title": "Siem Reap Art Center Night Market",
+    "title": "Siem Reap Art Center Night Market (Siem Reap)",
+    "altNames": "Siem Reap Art Center · មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប · 暹粒藝術中心夜市",
     "subtitle": "Explore local crafts, Cambodian culture and evening market atmosphere in Siem Reap.",
     "ctaMap": "View Map",
-    "ctaInfo": "Visitor Information"
+    "ctaInfo": "Visitor Information",
+    "imageAlt": "Siem Reap Art Center Night Market - Main view in Siem Reap, Cambodia",
+    "ratingAria": "Google Maps rating"
   },
   "info": {
     "title": "Attraction Information",
@@ -29,14 +51,27 @@
       "type": "Type",
       "address": "Address",
       "coordinates": "Coordinates",
-      "plusCode": "Plus Code"
+      "plusCode": "Plus Code",
+      "phone": "Phone",
+      "city": "City",
+      "country": "Country"
     },
     "nameVal": "Siem Reap Art Center Night Market",
     "typeVal": "Night Market",
     "addressVal": "9V24+W2F, 17000 Hospital St, Krong Siem Reap, Cambodia",
     "coordsVal": "13.35228, 103.85231",
     "plusCodeVal": "9V24+W2F",
+    "phoneVal": "+855 63 963 331",
+    "cityVal": "Krong Siem Reap, Siem Reap Province",
+    "countryVal": "Cambodia",
     "mapCta": "Open in Google Maps"
+  },
+  "entity": {
+    "eyebrow": "Entity Overview",
+    "welcome": "Welcome to **Siem Reap Art Center Night Market**, widely recognized as the central **Siem Reap Art Center**. Located in the heart of **Siem Reap**, **Siem Reap Province**, **Cambodia**, this destination serves as a primary hub for travelers visiting the region.",
+    "cluster": "When visiting **Siem Reap Art Center Night Market**, visitors can easily explore surrounding historical landmarks and points of interest, including **Psar Chas (Old Market)** and the **Siem Reap River riverside promenade**.",
+    "domainNote": "The domain **srartcenter.com** stands for **Siem Reap Art Center** — the short name of Siem Reap Art Center Night Market, មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប in Khmer and 暹粒藝術中心夜市 in Chinese.",
+    "trailLabel": "Geographic hierarchy"
   },
   "about": {
     "title": "About Siem Reap Art Center Night Market",
@@ -78,29 +113,142 @@
       }
     ]
   },
+  "location": {
+    "title": "Location & How to Visit Siem Reap Art Center in Siem Reap",
+    "intro": "Siem Reap Art Center Night Market (暹粒藝術中心夜市 / មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប) sits inside Siem Reap town, Siem Reap Province, Cambodia. Use the details below to plan the trip; the interactive map is further down this page.",
+    "addressLabel": "Address",
+    "plusCodeLabel": "Plus Code",
+    "coordsLabel": "Coordinates",
+    "phoneLabel": "Phone",
+    "cityLabel": "City / District",
+    "hoursLabel": "Typical opening hours",
+    "hoursValue": "Monday – Saturday, 16:00 – 23:00",
+    "mapLinkLabel": "Open in Google Maps",
+    "tipsTitle": "Getting there at a glance",
+    "tips": [
+      "On foot: from Pub Street or Psar Chas (Old Market), walk south toward the Siem Reap River, cross it and continue to Hospital Street (Street 17000) — roughly 10–15 minutes.",
+      "By tuk-tuk: the usual way to travel in Siem Reap; most trips from the town centre take about 5–15 minutes depending on traffic.",
+      "By car or taxi: set the destination to 'Art Center Night Market, Hospital Street' and ask to be dropped near the main entrance."
+    ]
+  },
   "facilities": {
-    "title": "Facilities & Nearby Services",
-    "accessibility": {
-      "title": "Accessibility",
-      "body": "Accessibility information is limited. Visitors requiring assistance are advised to contact local facilities before visiting."
-    },
-    "wc": {
-      "title": "Restrooms / WC",
-      "body": "Public restroom availability may vary. Visitors should check nearby public facilities."
-    },
-    "parking": {
-      "title": "Parking Information",
-      "body": "Parking areas may exist in the surrounding streets. Peak evening hours can be crowded; walking or public transport is recommended."
-    },
+    "title": "Visitor Services & Nearby Facilities",
+    "intro": "Everything below is described by type only. This is a non-profit information page: no specific business, brand or property is recommended or endorsed, and prices and opening hours can change without notice.",
+    "cards": [
+      {
+        "icon": "♿",
+        "title": "Accessibility",
+        "body": "The market occupies a street-level area with paved but partly uneven surfaces. Low kerbs, cables and parked motorbikes are the practical obstacles. Wheelchairs and walking frames can usually move along the main lanes; the narrower aisles and the road crossing are easier with a companion."
+      },
+      {
+        "icon": "🚻",
+        "title": "Restrooms / WC",
+        "body": "Restrooms inside the market quarter are limited. Public facilities and the washrooms of nearby cafés, restaurants and shops are the usual option; some charge a small fee and close before the market does."
+      },
+      {
+        "icon": "🅿️",
+        "title": "Parking & drop-off",
+        "body": "There is no large dedicated car park: vehicles use the surrounding streets, where space becomes scarce from about 18:00. Tuk-tuks and ride-hailing cars normally drop passengers at the roadside entrance and wait nearby."
+      },
+      {
+        "icon": "🚰",
+        "title": "Drinking water & shade",
+        "body": "Bottled water and cold drinks are sold throughout the market. Stall canopies and covered aisles give shade, but seating is limited. Water-refill points are becoming more common if you carry your own bottle."
+      },
+      {
+        "icon": "💡",
+        "title": "Lighting & safety",
+        "body": "The market lanes are lit and busy until closing time. Take extra care where the market meets the road, since motorbikes move along that edge, and keep bags in front of you in crowded aisles."
+      },
+      {
+        "icon": "🧭",
+        "title": "Orientation & assistance",
+        "body": "The market is compact and can be walked as a loop. The plus code 9V24+W2F identifies the entrance for mapping apps, and the listed phone number is the quickest way to ask for directions during opening hours."
+      }
+    ],
     "nearby": {
-      "title": "Nearby Services",
+      "title": "Nearby services, by type",
+      "intro": "What exists in the surrounding town centre, described without naming or ranking any business.",
       "items": [
-        { "title": "Nearby Food Options", "desc": "The surrounding area usually has local restaurants, street-food stalls, and drink shops." },
-        { "title": "Accommodation Information", "desc": "The area includes hotels, guesthouses, and hostels. No specific lodging is recommended here." },
-        { "title": "Shopping Facilities", "desc": "Convenience stores and daily-goods shops can be found nearby." },
-        { "title": "Fuel & EV Charging", "desc": "Self-driving visitors can find fuel services in the city area; EV charging points may be limited." }
+        { "icon": "🍜", "title": "Food & drink outlets", "desc": "Street-food stalls, casual local restaurants, coffee and juice shops cluster around the market and the riverside, most of them open into the late evening. Vegetarian, halal or allergy-specific kitchens vary from place to place and are best asked about directly." },
+        { "icon": "🛏️", "title": "Accommodation categories", "desc": "The town centre holds hostels, guesthouses, boutique hotels and larger hotels, several within walking distance of the market. Availability is tightest from November to February, when booking ahead is sensible." },
+        { "icon": "🛒", "title": "Supermarkets & convenience stores", "desc": "Small convenience stores and daily-goods shops trade into the evening; larger supermarkets usually close earlier. Fresh produce is easiest to find in the traditional markets during the day." },
+        { "icon": "🏧", "title": "ATMs, banks & currency", "desc": "ATMs and bank branches are concentrated in the centre and dispense US dollars and Cambodian riel. Cash is the norm at market stalls, small notes are the most useful, and card acceptance is limited." },
+        { "icon": "🏥", "title": "Pharmacy, clinic & emergency care", "desc": "Hospital Street takes its name from the concentration of medical services in this part of town: pharmacies, clinics and hospital facilities. Opening hours differ, so call ahead outside daytime hours." },
+        { "icon": "⛽", "title": "Fuel stations & EV charging", "desc": "Fuel stations are found on the main roads into town. Charging points for electric vehicles remain few, so plan a charging stop before you arrive." },
+        { "icon": "📱", "title": "Mobile data & Wi-Fi", "desc": "Local operators sell prepaid SIM and eSIM plans with good coverage in town, and most cafés and hotels provide Wi-Fi. Signal can be intermittent in the busiest market aisles." },
+        { "icon": "🧺", "title": "Laundry & luggage", "desc": "Laundry services and luggage storage are common in the guesthouse quarter around the centre — useful if you leave town after an evening visit." },
+        { "icon": "🚲", "title": "Bicycles, tuk-tuks & transport", "desc": "Bicycles can be rented by the day, and tuk-tuks are available on the street or through ride-hailing apps. For unmetered trips, agree the fare before departure." },
+        { "icon": "🛕", "title": "Quiet space & religious sites", "desc": "Several Buddhist temples stand within walking distance. Cover shoulders and knees, remove shoes where indicated, and keep voices low when people are praying." }
       ]
-    }
+    },
+    "note": "Facility descriptions reflect typical conditions on Hospital Street and in the surrounding town centre and are provided for orientation only. Services, opening hours and prices may change."
+  },
+  "landmarks": {
+    "title": "Landmarks & Attractions Around Siem Reap Art Center",
+    "intro": "Siem Reap Art Center Night Market sits inside a compact, walkable part of Siem Reap town. These nearby landmarks are easy to combine with the same evening.",
+    "items": [
+      {
+        "icon": "🏮",
+        "name": "Psar Chas (Old Market)",
+        "desc": "The historic central market of Siem Reap, within walking distance of the night market quarter and known for fabrics, spices and souvenirs."
+      },
+      {
+        "icon": "🏞️",
+        "name": "Siem Reap River riverside promenade",
+        "desc": "The riverside walkway that links the old market quarter with the northern part of town and is busiest in the early evening."
+      },
+      {
+        "icon": "🎶",
+        "name": "Pub Street (Street 8)",
+        "desc": "Siem Reap's best-known evening street, next to the old market quarter and easy to reach on foot."
+      },
+      {
+        "icon": "🛕",
+        "name": "Wat Preah Prom Rath",
+        "desc": "A Buddhist temple in the centre of Siem Reap town, noted for its painted walls and riverside setting."
+      }
+    ],
+    "imageAlt": "near Siem Reap Art Center"
+  },
+  "history": {
+    "deepDive": [
+      "Cambodia's night markets are also a piece of town planning. Grouping food, crafts and evening trade into a few streets concentrates lighting, waste collection and traffic management in one place, which keeps the rest of the centre residential. The layout visitors walk through — rows of small stalls with a food section and a seating or stage area — is the practical result of that idea.",
+      "The market's position shapes its character. Hospital Street and the surrounding quarter sit between the river and the main approach roads, close enough to the guesthouse district to be reached on foot, and far enough from the temple road to serve residents as much as visitors. That is why the food rows fill up earlier than the souvenir aisles."
+    ],
+    "timelineTitle": "Timeline of the town behind the market",
+    "timeline": [
+      { "year": "12th century", "title": "The Angkor period", "text": "The temples that made this region famous are built, and with them the craft tradition — stone carving, bronze casting, weaving — that later generations of Siem Reap artisans inherit." },
+      { "year": "1907", "title": "The province returns to Cambodian administration", "text": "Under the Franco-Siamese treaty, Siem Reap and Battambang provinces are returned to Cambodian administration, and the town begins to grow around the route to the temples." },
+      { "year": "1920s – 1930s", "title": "The first tourist town", "text": "Once the temples can be reached by road, Siem Reap develops hotels and guesthouses for visitors — the beginning of the service economy that still defines the town centre." },
+      { "year": "1992", "title": "Angkor becomes a World Heritage Site", "text": "The archaeological park is inscribed on the UNESCO World Heritage List, and international visitor numbers begin the long rise that reshapes the town's streets, markets and evening trade." },
+      { "year": "1990s – 2000s", "title": "The evening economy grows", "text": "Guesthouses, restaurants and the first night markets appear in the centre. Trading shifts from a daytime market day to a second, later one that continues until midnight." },
+      { "year": "2010s", "title": "A walkable centre", "text": "The riverside and the old market quarter become the focus of evening life, with markets, food streets and craft shops clustering within a short walk of one another." },
+      { "year": "Today", "title": "Art Center Night Market", "text": "The market trades on Hospital Street as a modern evening market: craft and souvenir rows, food stalls and a late closing time, serving residents and visitors in the same lanes." }
+    ],
+    "craftsTitle": "Craft traditions behind the stalls",
+    "craftsIntro": "The goods sold in the centre are the visible end of trades that are still taught and practised across Siem Reap province.",
+    "crafts": [
+      { "icon": "🗿", "title": "Stone carving", "desc": "Sandstone and laterite are worked with chisels into reliefs and figures modelled on the temples. A single detailed piece can take days or weeks." },
+      { "icon": "🧵", "title": "Silk & ikat weaving", "desc": "Cambodian silk is woven on handlooms, and the 'hol' technique dyes the pattern into the threads before weaving, which gives the cloth its characteristic slightly softened edges." },
+      { "icon": "🪵", "title": "Lacquerware & woodwork", "desc": "Layers of lacquer are built up and polished over carved wood, often with gold or silver leaf applied in the final stages." },
+      { "icon": "💍", "title": "Silver & beadwork", "desc": "Silver has a long tradition in Cambodian jewellery, often combined with woven cord, stones or beads in designs that echo temple ornament." }
+    ],
+    "legendsTitle": "Stories & Legends of Siem Reap",
+    "legendsIntro": "These are legends and traditions told around Siem Reap town, included as cultural background. They are not documented history of the market, and where a scientific explanation exists it is given alongside.",
+    "legends": [
+      { "icon": "⚔️", "title": "Why the town is called Siem Reap", "body": "The name is commonly explained as 'the defeat of Siam' — a folk memory of a Khmer victory over Siamese forces, said to have given the town its name. Historians treat the story as tradition rather than record, yet the name has carried that meaning for generations." },
+      { "icon": "🌊", "title": "The lake that flows both ways", "body": "Local tradition describes the Tonle Sap as a lake that breathes. Science explains the same phenomenon: during the monsoon the swollen Mekong pushes the Tonle Sap river upstream and the lake expands several-fold; as the water level falls, the flow reverses toward the sea. Fishing, farming and the region's festivals are all organised around that reversal." },
+      { "icon": "💃", "title": "The apsaras of Angkor", "body": "The celestial dancers carved into the temples come from the legend of the churning of the ocean, when gods and demons stirred the sea and the apsaras rose from the water. Their poses are the ancestor of Cambodian classical dance, which can still be seen performed in town." },
+      { "icon": "🕯️", "title": "The two guardian statues", "body": "Siem Reap town keeps a well-known shrine with two revered Buddha images, understood locally as brother and sister, who are asked for protection and good fortune. It is a working place of worship, so visitors dress and behave accordingly." },
+      { "icon": "🛶", "title": "The water festival", "body": "When the lake finally drains, the town celebrates with boat races, illuminated floats and fireworks. The festival marks the turn of the water year, and the strings of lights over an evening market carry the same idea in a smaller, everyday form." }
+    ],
+    "paragraphs": [
+      "Siem Reap Art Center Night Market belongs to the modern chapter of the town's history. Siem Reap grew into an international destination around the Angkor archaeological park, and an evening market economy grew alongside it to serve both residents and the visitors who arrive each season.",
+      "Cambodian night markets are, above all, working commercial spaces. They are usually laid out as rows of small, individually owned stalls and they follow the rhythm of the day: setting up in the late afternoon, filling up after dark, and closing late in the evening.",
+      "For Siem Reap, the Art Center Night Market matters because it keeps handicraft and food trade in the centre of town. Buyers and makers meet directly at the stall, which is why these markets remain a practical point of contact with Cambodian craft traditions and everyday cooking.",
+      "This page describes the market as it is publicly listed. It makes no claim of official status and reproduces no promotional material; stalls, opening hours and services may change over time."
+    ]
   },
   "safety": {
     "title": "Visitor Safety Tips",
@@ -173,7 +321,8 @@
   "gallery": {
     "title": "Gallery",
     "intro": "A glimpse of the night market, local crafts, food culture, and street atmosphere in Siem Reap.",
-    "credits": "Image credits belong to original photographers.",
+    "credits": "All image property and copyright on this website belong to the original photographers.",
+    "creditsNote": "Photos illustrate the market and its surroundings; they are not sold, licensed or resold by this guide.",
     "categories": ["Night Market View", "Local Crafts", "Food Culture", "Street Atmosphere"],
     "alts": [
       "Siem Reap Art Center Night Market lit up after dark",
@@ -202,20 +351,66 @@
       "Reflections of market lights by the water"
     ]
   },
+  "reviews": {
+    "title": "Ratings & Reviews",
+    "intro": "Visitor ratings for Siem Reap Art Center Night Market are published by Google Maps users. The figures below are reproduced as they appeared on the Google Maps listing when this page was last synchronised.",
+    "ratingLabel": "Rating",
+    "ratingValue": "4.2",
+    "ratingOutOf": "out of 5",
+    "reviewsLabel": "Reviews",
+    "reviewCount": "6,082",
+    "sourceBadge": "Google Maps",
+    "syncLinePrefix": "Ratings and review counts are synced from Google Maps user reviews · September 2026 ·",
+    "syncLineLink": "View all reviews on Google Maps",
+    "sourceNote": "Synced from Google Maps user reviews, last synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "cta": "View all reviews on Google Maps",
+    "categoryLabel": "Category",
+    "categoryValue": "Night market",
+    "dataNote": "Only the aggregate rating and review count are reproduced, with the source named above. No review text and no reviewer names are copied onto this page."
+  },
   "map": {
     "title": "Location & Map",
     "caption": "Siem Reap Art Center Night Market · 17000 Hospital St, Krong Siem Reap, Cambodia"
+  },
+  "sources": {
+    "dataLabel": "Data sources",
+    "dataValue": "Live conditions: numerical forecast data (Open-Meteo, CC BY 4.0). Climate normals: 1991–2020 thirty-year averages for Siem Reap Province, the WMO reference period for long-term averages.",
+    "dataNote": "Weather figures describe the Siem Reap town area and refresh automatically; climate figures are long-term averages and cannot describe a single day.",
+    "title": "Sources & References",
+    "intro": "This page is a non-profit visitor information guide. The facts below come from the public sources listed here, and nothing on this page is a commercial recommendation.",
+    "ratingLabel": "Reviews",
+    "syncedLabel": "Synced",
+    "syncedValue": "September 2026",
+    "ratingSourceNote": "Synced from Google Maps user reviews, last synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "ratingLinkLabel": "View all reviews on Google Maps",
+    "mapsLabel": "Location data",
+    "mapsValue": "Google Maps place listing — 9V24+W2F, 17000 Hospital St, Krong Siem Reap, Cambodia",
+    "mapsLinkLabel": "Open this listing in Google Maps",
+    "govtLabel": "Official tourism information",
+    "govtValue": "Cambodia Ministry of Tourism and the official Cambodia tourism portal",
+    "govtLinkLabel": "Cambodia / Siem Reap Province Official Tourism Portal",
+    "govtOrgLinkLabel": "Cambodia Ministry of Tourism official portal",
+    "contactLabel": "Attraction contact listed publicly",
+    "contactValue": "+855 63 963 331 · https://www.srartcenter.com/",
+    "imagesLabel": "Image ownership",
+    "imagesValue": "All image property and copyright on this website belong to the original photographers.",
+    "imagesNote": "Photographs are displayed for illustrative visitor information only, and no ownership is claimed over them by this guide.",
+    "note": "Opening hours, stall lists, phone numbers and services may change. Verify details before you travel."
   },
   "faq": {
     "title": "FAQ",
     "items": [
       {
+        "q": "Where is Siem Reap Art Center Night Market located?",
+        "a": "Siem Reap Art Center Night Market is located at 9V24+W2F, 17000 Hospital St, Krong Siem Reap, Siem Reap Province, Cambodia."
+      },
+      {
         "q": "What time does Siem Reap Art Center Night Market open?",
         "a": "Usually from 16:00 to 23:00, Monday to Saturday. Hours may change."
       },
       {
-        "q": "Is there an entrance fee?",
-        "a": "The market generally does not require a general admission ticket."
+        "q": "Is Siem Reap Art Center free to visit?",
+        "a": "Yes, Siem Reap Art Center Night Market is a public market space and generally does not require a general admission ticket."
       },
       {
         "q": "Is it suitable for families?",
@@ -224,30 +419,326 @@
       {
         "q": "What can visitors buy?",
         "a": "Visitors may find local handicrafts, souvenirs and cultural products."
+      },
+      {
+        "q": "How do I get to Siem Reap Art Center Night Market from Pub Street or the Old Market?",
+        "a": "Walk south toward the Siem Reap River, cross it and continue to Hospital Street (Street 17000); the walk takes about 10–15 minutes, or about 5–15 minutes by tuk-tuk."
+      },
+      {
+        "q": "What is the phone number of Siem Reap Art Center Night Market?",
+        "a": "The publicly listed phone number is +855 63 963 331."
+      },
+      {
+        "q": "Where do the ratings and reviews on this page come from?",
+        "a": "The 4.2 rating and 6,082 reviews shown on this page are synced from Google Maps user reviews, last synchronised September 2026. Copyright belongs to the original authors and Google Maps; use the 'View all reviews on Google Maps' link for the full list."
+      },
+      {
+        "q": "What is the weather like, and which season is best for an evening visit?",
+        "a": "The year divides into a cool dry season from November to February (21–31 °C, the most comfortable evenings), a hot dry season from March to May (26–36 °C), and the monsoon from June to October, when short heavy showers are common and September to October is wettest. Late November to February is the best window overall; June to October is quieter but wetter. The live forecast at the top of this page includes the market's opening hours."
+      },
+      {
+        "q": "Does the market close when it rains?",
+        "a": "Evening markets in Siem Reap normally keep trading through rain, and the stall canopies give some shelter. Showers in the monsoon season often pass within an hour. Paving becomes slippery, so grippy shoes are safer than smooth soles."
+      },
+      {
+        "q": "Are there restrooms, parking and ATMs nearby?",
+        "a": "Restrooms inside the market quarter are limited, so the washrooms of nearby cafés, restaurants and shops are the usual option. There is no large dedicated car park; vehicles use the surrounding streets, which fill up from about 18:00. ATMs and banks are concentrated in the town centre, and cash in small notes is the most practical way to pay at the stalls."
+      },
+      {
+        "q": "Is the market accessible for visitors with reduced mobility?",
+        "a": "The market is at street level and the main lanes are wide enough for a wheelchair or walking frame, but kerbs, cables and parked motorbikes need care, and narrow aisles are easier with a companion. Arriving between 17:00 and 19:00, before the aisles fill up, makes the visit considerably easier."
+      },
+      {
+        "q": "What should visitors avoid doing at the market?",
+        "a": "Do not buy ivory, tortoiseshell, animal bone or objects sold as antiques or temple artefacts. Ask vendors before photographing them or their stall, and accept a refusal. Dress modestly at the temples within walking distance, avoid leaving plastic waste in the lanes, and settle a bargained price before an item is wrapped."
       }
     ]
   },
   "footer": {
     "siteName": "Siem Reap Art Center Night Market",
     "tagline": "An independent non-profit visitor information guide — not a booking or commercial site.",
-    "disclaimer": "This website is an independent non-profit visitor information project and is not affiliated with any government agency or official organization. Attraction information is cross-checked against publicly available materials from Siem Reap Municipality, the Siem Reap Provincial Tourism Department, and the Cambodia Ministry of Tourism. It contains no commercial recommendations. All images displayed on this website remain the property of their respective photographers and copyright holders.",
+    "disclaimer": "This website is an independent non-profit visitor information project and is not affiliated with any government agency or official organization. Attraction information is cross-checked against publicly available materials from Siem Reap Municipality, the Siem Reap Provincial Tourism Department, and the Cambodia Ministry of Tourism. It contains no commercial recommendations. All image property and copyright on this website belong to the original photographers. Ratings and review counts are synced from Google Maps user reviews (last synchronised September 2026) and copyright in them belongs to the original authors and Google Maps.",
     "rights": "© {year} Siem Reap Art Center Night Market Guide. Non-profit travel information.",
     "navTitle": "Sections",
     "langTitle": "Languages",
+    "imageCredits": "All image property and copyright on this website belong to the original photographers.",
     "links": {
       "maps": "View on Google Maps",
+      "reviews": "View all reviews on Google Maps",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookies": "Cookie Settings"
     }
+  },
+  "weather": {
+    "eyebrow": "Live conditions",
+    "title": "Weather & Best Time to Visit",
+    "intro": "Current conditions in Siem Reap town with a seven-day outlook, plus the window that matters most here: the hours the market is open, 16:00 – 23:00.",
+    "nowLabel": "Now",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rainChance": "Rain chance today",
+    "uvMax": "UV index (max)",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "todayRange": "Today",
+    "eveningTitle": "During market hours (16:00 – 23:00)",
+    "eveningRange": "Temperature",
+    "eveningRain": "Chance of rain",
+    "eveningWind": "Wind",
+    "gust": "Gusts",
+    "gustSub": "gusts {gust} km/h",
+    "windSub": "gusts {gust} km/h · force {level}",
+    "staleLabel": "earlier reading",
+    "forecastTitle": "Seven-day outlook",
+    "today": "Today",
+    "updatedLabel": "Updated",
+    "localTimeLabel": "Local time",
+    "smart": {
+      "title": "Tonight at a glance",
+      "alertsTitle": "Weather warning — adjust your plan",
+      "noAlerts": "No weather warning for tonight: nothing in the forecast calls for a change of plan.",
+      "cautionsTitle": "Worth knowing",
+      "clothingTitle": "What to wear",
+      "activitiesTitle": "How to plan the evening",
+      "itemsTitle": "What to pack",
+      "climateLink": "Monthly climate and the best season to visit",
+      "severeDay": "Weather warning expected",
+      "rules": {
+        "alertThunder": "Thunderstorms in the forecast. Skip lake boat trips, stay away from tall trees and open ground, and keep to covered walkways — water activities are usually suspended.",
+        "alertHeavyRain": "Heavy rain today, around {mm} mm. Avoid low-lying streets and the drains beside them, and allow extra time to get around.",
+        "alertHeat": "It feels like about {temp}°C. Heat like this is a health matter: drink before you feel thirsty, stay in the shade and take real breaks.",
+        "alertGale": "Very strong wind, gusts near {wind} km/h. Keep clear of trees, loose signage and stall canopies, and expect boat services to be suspended.",
+        "alertFog": "Thick fog, so visibility is poor. Scenic views are spoiled, road travel slows down and flights or boat trips may be delayed.",
+        "alertCold": "Cold spell with lows near {temp}°C. Bring proper winter layers if you are not used to it.",
+        "cautionBoat": "Lake boat trips may be suspended in this weather — check before heading to the jetty.",
+        "cautionWindy": "Wind around force {level}: hats and light items go flying and stall canopies flap.",
+        "cautionSlippery": "The paving is wet and gets slippery between the stalls. Take the aisles slowly.",
+        "cautionHotWalk": "Daytime high near {temp}°C — the afternoon is hot, the evening is the pleasant part of the day.",
+        "cautionHumid": "Warm and humid, so the air feels heavy. Move slowly and drink more than usual.",
+        "dressRain": "Light, quick-drying clothes with a waterproof outer layer.",
+        "dressLight": "Light, breathable clothes — cotton or linen rather than anything heavy.",
+        "dressLayers": "A big difference between day and night, so bring a thin layer you can add after dark.",
+        "dressWarm": "Cold weather: a warm coat, and a scarf for the evening.",
+        "dressComfort": "Comfortable walking clothes and shoes you can stand in for a couple of hours.",
+        "actIndoor": "Prefer indoor stops — museums, covered arcades and the market's roofed aisles — and postpone open-air plans.",
+        "actBoatSuspend": "Water activities and boat trips are likely to be cancelled today.",
+        "actOutdoorPoor": "Open-air experiences will not be pleasant. Keep them short or move them to another day.",
+        "actPoorViews": "Views will be hazy, so this is not the day for a scenic viewpoint.",
+        "actNoon": "Avoid the middle of the day and come out after 16:00, when the market opens and the heat eases.",
+        "actSunset": "Plan around sunset: golden hour first, then the lit-up lanes after dark.",
+        "actPhotoSoft": "Soft, even light — good conditions for photos and for a long, unhurried walk.",
+        "actOutdoorGood": "Clear weather, well suited to walking and outdoor sightseeing.",
+        "actAnyTime": "Nothing in the weather changes the plan: any part of the evening works, and 19:00–21:00 is the liveliest.",
+        "itemUmbrella": "Umbrella or rain jacket — rain is likely while you are out.",
+        "itemRaincoatWind": "A rain jacket rather than a long umbrella, which turns inside out in this wind.",
+        "itemFoldingUmbrella": "A folding umbrella in the bag, in case a shower passes over.",
+        "itemRaincoat": "A rain jacket for heavy rain.",
+        "itemWater": "Drinking water — you will need more than you expect.",
+        "itemSun": "Sunscreen, sunglasses and a hat: the UV index reaches about {uv}.",
+        "itemFan": "A small fan or a hand fan — humid heat keeps going after sunset.",
+        "itemRepellent": "Mosquito repellent: warm, humid evenings are when they are most active.",
+        "itemGrippyShoes": "Shoes with grip — smooth soles slide on wet paving.",
+        "itemMask": "A mask if dust or haze irritates you.",
+        "itemBasics": "Phone charged for maps and a light, plus a little cash in small notes."
+      }
+    },
+    "unavailable": {
+      "title": "Live weather is temporarily unavailable",
+      "body": "The forecast feed did not respond just now. The seasonal guide below is built on thirty years of climate averages for Siem Reap Province and is a reliable way to plan an evening visit.",
+      "cta": "Open the seasonal guide"
+    },
+    "codes": {
+      "clear": "Clear sky",
+      "mostlyClear": "Mostly clear",
+      "partly": "Partly cloudy",
+      "overcast": "Overcast",
+      "fog": "Fog",
+      "drizzle": "Light drizzle",
+      "rain": "Rain",
+      "showers": "Rain showers",
+      "thunder": "Thunderstorm",
+      "snow": "Snow"
+    },
+    "units": { "temp": "°C", "wind": "km/h" }
+  },
+  "seasonal": {
+    "title": "Seasonal Visiting Strategy",
+    "subtitle": "Weather, water level and crowd patterns read together — based on the 1991–2020 thirty-year climate normal for Siem Reap Province.",
+    "intro": "Cambodia's year is organised by the monsoon, and the monsoon decides what an evening at the market feels like: how hot it is at 18:00, whether the paving is wet, and how many people are in the lanes. The table below turns that rhythm into practical choices.",
+    "tableHead": ["Season", "Months", "Typical temperature", "Rain", "Comfort at night", "Crowds", "How to plan"],
+    "seasons": [
+      {
+        "icon": "❄️",
+        "name": "Cool dry season",
+        "months": "November – February",
+        "temp": "21 – 31 °C",
+        "rain": "Very little; the driest stretch of the year",
+        "comfort": "The most comfortable evenings — lower humidity, light breeze",
+        "crowds": "Peak travel season: busiest lanes and the fullest hotels",
+        "advice": "Book accommodation ahead, bring a light layer for late evenings, and treat this as the best window for photography and for slow browsing."
+      },
+      {
+        "icon": "🔥",
+        "name": "Hot dry season",
+        "months": "March – May",
+        "temp": "26 – 36 °C",
+        "rain": "Rare, though the first storms of the year can break in late April or May",
+        "comfort": "Hot and humid; evenings stay warm after sunset",
+        "crowds": "Quieter than the peak season, except around Khmer New Year in mid-April",
+        "advice": "Visit after sunset rather than in the afternoon heat, carry water, and expect the town to be extremely busy during the New Year holidays."
+      },
+      {
+        "icon": "🌦️",
+        "name": "Early monsoon",
+        "months": "June – August",
+        "temp": "25 – 33 °C",
+        "rain": "Short, heavy afternoon or evening showers on many days",
+        "comfort": "Humid, but the showers cool the evening down",
+        "crowds": "Low season — the easiest time to move around and talk to makers",
+        "advice": "Start later and keep an umbrella with you. Rain usually passes within an hour and the market keeps trading through it."
+      },
+      {
+        "icon": "🌧️",
+        "name": "Peak monsoon",
+        "months": "September – October",
+        "temp": "24 – 32 °C",
+        "rain": "The wettest months: long spells of rain and the highest river levels",
+        "comfort": "Warm and humid; puddles and wet paving are normal",
+        "crowds": "The quietest months of the year for the town",
+        "advice": "Waterproof footwear helps more than an umbrella. Check that the streets around your accommodation drain well and allow extra travel time."
+      }
+    ],
+    "bestTitle": "Best window overall",
+    "bestLine": "Late November to February gives the most comfortable evenings. If you prefer quiet lanes and lower prices, June to October is the trade-off: you accept rain and gain space. Khmer New Year in mid-April and the water festival in November are the two busiest periods in town, so plan transport and accommodation around them.",
+    "waterTitle": "Water level and the lake rhythm",
+    "waterLine": "Siem Reap province is shaped by the Tonle Sap, whose river reverses direction each year: during the monsoon the lake swells to several times its dry-season size, and from around November the flow turns back toward the Mekong and the lake drains. That flood pulse is why the regional calendar — planting, fishing and the boat-racing festival — sits where it does. In the town centre it shows up as higher river levels and a faster current from roughly August to November.",
+    "note": "Figures are long-term averages for Siem Reap Province describing typical conditions rather than a specific day. The market's opening hours and stall numbers do not change with the season."
+  },
+  "audiences": {
+    "title": "Visit Plans by Traveller Type",
+    "intro": "The same market works very differently depending on who is walking through it. The three plans below match route, pace and timing to how you travel.",
+    "labels": {
+      "duration": "Time needed",
+      "pace": "Pace",
+      "bestTime": "Best time",
+      "stops": "Suggested order",
+      "bring": "What to bring"
+    },
+    "plans": [
+      {
+        "icon": "👨‍👩‍👧",
+        "name": "Families with children",
+        "summary": "Children enjoy the market most while it is still early and bright: fewer crowds, more room, and food stalls just starting the evening. Keep the visit short and finish before tiredness sets in.",
+        "duration": "1.5 – 2 hours",
+        "bestTime": "17:30 – 20:00",
+        "pace": "Slow, with a seated break in the middle",
+        "stops": [
+          "Enter from the Hospital Street side while the lanes are still quiet",
+          "Walk one loop of the craft stalls and let the children choose a single souvenir",
+          "Eat at the food rows before the peak crowd arrives",
+          "Finish with a drink at the quieter end, then leave before 20:30"
+        ],
+        "bring": "Water, wet wipes, a light layer against mosquitoes after sunset and cash in small notes. A stroller works on the main lanes but is awkward in the narrow aisles."
+      },
+      {
+        "icon": "📷",
+        "name": "Photography & nature",
+        "summary": "The best light arrives just before sunset and again in the first hour after the lamps come on. Look beyond the market as well: the river and the temple grounds nearby are the natural subjects of the same evening.",
+        "duration": "2 – 3 hours",
+        "bestTime": "17:15 – 20:30 (golden hour, then blue hour with the lamps on)",
+        "pace": "Flexible: a slow first loop, then a second pass for detail shots",
+        "stops": [
+          "Start on the riverside promenade for the pre-sunset light",
+          "Reach the market lanes as the lamps are switched on",
+          "Shoot the craft stalls from the aisle, never from inside a stall",
+          "Return to the entrance for a wide shot of the illuminated frontage"
+        ],
+        "bring": "A fast lens for the evening light, a small tripod only where it does not block the walkway and a cloth for humid conditions. Always ask before photographing people or their work."
+      },
+      {
+        "icon": "♿",
+        "name": "Low mobility & step-free visit",
+        "summary": "A step-free visit is possible with some planning: the market sits at street level and the main lanes are wide enough for a wheelchair or walking frame, though kerbs, cables and parked motorbikes need care.",
+        "duration": "1 – 1.5 hours",
+        "bestTime": "17:00 – 19:00, before the aisles fill up",
+        "pace": "Short, with frequent stops and a planned exit",
+        "stops": [
+          "Ask the driver to stop at the roadside entrance rather than across the street",
+          "Follow the widest perimeter lane instead of the central aisles",
+          "Use a food stall with seating and a clear approach for a rest",
+          "Leave by the same entrance you came in, while the lanes are still passable"
+        ],
+        "bring": "A companion if possible, a folding walking stick and the market's phone number in case you need assistance on arrival."
+      }
+    ]
+  },
+  "visitPlans": {
+    "title": "Recommended Routes: Half Day & Full Day",
+    "intro": "The market comes alive in the late afternoon, so both routes are built backwards from dusk: use the daylight for the town and finish where the evening trade begins.",
+    "halfDay": {
+      "label": "Half day",
+      "duration": "About 4 hours (14:30 – 20:00)",
+      "summary": "A compact route for a first visit: one craft stop, the town centre on foot and the market at its liveliest moment.",
+      "steps": [
+        { "time": "14:30", "title": "Craft or market stop in the centre", "desc": "Begin with a daytime look at the old market quarter or a craft workshop, where you can see how the goods sold in the evening are actually made." },
+        { "time": "16:00", "title": "Walk the river and the temple grounds", "desc": "Follow the riverside promenade north. It is the easiest way to understand how the centre is laid out, and the light is at its best at this hour." },
+        { "time": "17:00", "title": "Coffee or a cold drink", "desc": "Take a break before the evening rush. Restaurants in the centre start serving early and are calm at this point in the day." },
+        { "time": "17:45", "title": "Arrive at Siem Reap Art Center Night Market", "desc": "Enter from the Hospital Street side. Walk one full loop first, note what you want to buy, then go back for it." },
+        { "time": "19:00", "title": "Eat at the market food rows", "desc": "Choose a stall that is busy with local customers; turnover is the simplest sign of fresh food." },
+        { "time": "19:45", "title": "Last purchases and exit", "desc": "Buy what you shortlisted, then leave while the streets are still easy to cross. Tuk-tuks wait near the main entrance." }
+      ],
+      "note": "Distances inside the centre are short: the market, the old market and the riverside are all within about 15 minutes on foot. Carry cash in small notes."
+    },
+    "fullDay": {
+      "label": "Full day",
+      "duration": "About 9 hours (10:00 – 21:00)",
+      "summary": "For visitors who want the region's context before the market: a measured day with a proper break in the afternoon heat, ending at the evening market.",
+      "steps": [
+        { "time": "10:00", "title": "Angkor Archaeological Park (optional, ticketed)", "desc": "The region's best-known site lies a short drive north of town and needs its own ticket and several hours. With one day available, choose two or three temples rather than trying to see everything." },
+        { "time": "13:30", "title": "Lunch and rest", "desc": "Return to town for a late lunch and a proper break out of the heat. The early afternoon is the hottest part of the day and the market is still closed." },
+        { "time": "15:30", "title": "Museum or craft workshop", "desc": "A museum or a working workshop supplies the historical and technical background to the carving, silk and lacquerware you will see later at the stalls." },
+        { "time": "16:45", "title": "Riverside walk and temple stop", "desc": "Walk the promenade between the old market quarter and the northern bridges, with a short stop at a Buddhist temple in the centre." },
+        { "time": "17:45", "title": "Siem Reap Art Center Night Market", "desc": "Arrive as the stalls finish setting up. Walk the craft rows first and the food rows afterwards." },
+        { "time": "19:30", "title": "Dinner at the market", "desc": "Eat on site among the food stalls. Vegetarian and mild options exist, but ask: not every stall advertises them." },
+        { "time": "20:30", "title": "Evening stroll, then back", "desc": "Walk the illuminated lanes once more and use the exit closest to your transport. Stalls begin packing up towards 23:00." }
+      ],
+      "note": "This plan assumes a full day in town. Angkor Archaeological Park is a separate, ticketed site with its own visitor rules, including dress requirements at the temples; treat it as its own half or full day rather than an add-on."
+    },
+    "ticketNote": "Both routes are self-guided and free of charge: the market itself has no general admission ticket. Costs arise only for optional items such as temple tickets, museum entry, meals, transport and purchases."
+  },
+  "science": {
+    "title": "Understanding the Market",
+    "intro": "A night market is an economy, a craft workshop and a piece of town planning at the same time. These short notes explain what is actually going on behind the stalls.",
+    "items": [
+      { "icon": "🏪", "title": "How the stalls are run", "desc": "Most stalls are small family businesses rather than branches of a chain. Stock is often produced within the province, and the same family may trade at several markets during the week, which is why prices can differ between stalls for goods that look identical." },
+      { "icon": "🤝", "title": "The evening economy", "desc": "In Siem Reap the market employs far more people than the stallholders alone: drivers, cooks, cleaners, loaders and the workshops that supply the goods. An evening market concentrates that trade into a few walkable streets." },
+      { "icon": "🛠️", "title": "Why craft matters here", "desc": "The carving, weaving and lacquerwork sold in the centre descend from the artistic traditions of the Angkor period, kept alive by workshops across the province. Buying directly at a stall keeps more of the value with the maker." },
+      { "icon": "🛕", "title": "Reading the motifs", "desc": "Many designs repeat motifs from temple reliefs: apsara dancers, lotus flowers, naga serpents and scenes from the churning of the ocean. Recognising them turns shopping into a short lesson in Khmer iconography." },
+      { "icon": "🌊", "title": "The monsoon sets the calendar", "desc": "The regional year runs on the flood pulse of the Tonle Sap rather than on the calendar month. Rice, fish and travel all follow it, and the market's busiest evenings shift with the tourist and festival seasons that grew around it." },
+      { "icon": "🍜", "title": "Night markets and food safety", "desc": "Food stalls with high turnover and visible cooking are the safest bet for visitors. Freshly cooked hot dishes carry lower risk than food that has been standing, and bottled or boiled water is the usual choice for drinking." }
+    ],
+    "etiquetteTitle": "Visiting Responsibly",
+    "etiquetteIntro": "The market is somebody's workplace and the surrounding streets are somebody's home. A few habits keep the visit pleasant for everyone.",
+    "etiquette": [
+      { "icon": "🚯", "title": "Take your waste back", "desc": "Waste collection in the town centre struggles during the rainy season. Carry a small bag, reuse a bottle where you can, and never leave plastic in the lanes." },
+      { "icon": "📸", "title": "Ask before photographing people", "desc": "Photograph the goods freely, but ask vendors before photographing them or their stall, and accept a refusal without pressing the point. Do not use flash inside temples." },
+      { "icon": "💵", "title": "Bargain politely, once", "desc": "Gentle negotiation is normal in a market, but settle the price before an item is wrapped and pay the amount you agreed. Walking away after agreeing is not part of the custom." },
+      { "icon": "🛕", "title": "Dress for the temples", "desc": "Several temples stand within walking distance. Cover shoulders and knees, remove shoes where indicated, and keep voices low when people are praying." },
+      { "icon": "🐘", "title": "Avoid wildlife and antique products", "desc": "Do not buy ivory, tortoiseshell, animal bone, feathers or objects sold as antiques or temple artefacts. That trade is illegal, harms wildlife and cannot be exported lawfully." },
+      { "icon": "🙏", "title": "Respect the working day", "desc": "Stalls are small and often run by one person. Do not block an aisle to take photographs, do not rearrange a display without asking, and move on when a vendor is serving other customers." }
+    ],
+    "note": "This page is written as non-commercial information: it names no business, accepts no sponsorship and takes no commission from any purchase made by readers."
   },
   "legal": {
     "privacy": {
       "title": "Privacy Policy",
       "sections": [
         { "h": "Overview", "p": "This non-profit guide does not sell products or services and does not require user accounts. We collect only the minimal technical data needed to serve the site." },
-        { "h": "Analytics & Logs", "p": "Standard server logs (such as access time and page viewed) may be processed to keep the site running. No personally identifying profiles are built or shared." },
-        { "h": "Cookies", "p": "The site may use essential cookies only. We do not use advertising or tracking cookies across third-party sites." },
+        { "h": "Analytics & Logs", "p": "We use Google Analytics 4 (measurement ID G-HXM22WWPKP) to understand aggregate traffic such as page views, language and approximate country. Standard server logs (such as access time and page viewed) may also be processed to keep the site running. No personally identifying profiles are built or shared by us." },
+        { "h": "Cookies", "p": "The site uses essential storage only for language preference, plus the analytics cookies set by Google Analytics 4 described above. We do not use advertising or cross-site tracking cookies." },
+        { "h": "Third-party Ratings & Reviews", "p": "Aggregate rating and review counts published by Google Maps are displayed on this page with their source stated. No review text, reviewer names or reviewer profiles are copied onto this site." },
         { "h": "External Links", "p": "Links to maps and other external services are provided for reference; their privacy practices are governed by those providers." },
         { "h": "Contact", "p": "For questions about this policy, reach out through the project's public channels." }
       ]
@@ -257,6 +748,8 @@
       "sections": [
         { "h": "Informational Use", "p": "All content is provided for general visitor information and is compiled from public sources. It is not official advice." },
         { "h": "No Commercial Endorsement", "p": "This site makes no commercial recommendations and is not affiliated with any vendor, venue, or government body." },
+        { "h": "Ratings & Reviews Attribution", "p": "Aggregate ratings and review counts are reproduced from Google Maps user reviews with the sync date stated. Copyright in those ratings and reviews remains with the original authors and Google Maps." },
+        { "h": "Image Rights", "p": "All image property and copyright on this website belong to the original photographers." },
         { "h": "Accuracy", "p": "While we aim to keep information current, opening hours, access, and services may change. Verify details before your visit." },
         { "h": "Liability", "p": "The project is not liable for decisions made based on the information provided here." }
       ]
@@ -265,8 +758,8 @@
       "title": "Cookie Settings",
       "sections": [
         { "h": "Essential Cookies", "p": "Required for the site to function, such as remembering language preference. These cannot be switched off." },
-        { "h": "Analytics Cookies", "p": "Used only in aggregate to understand basic traffic. We keep these to a minimum." },
-        { "h": "Your Choice", "p": "You can disable non-essential cookies in your browser. The site remains fully usable without them." }
+        { "h": "Analytics Cookies", "p": "Google Analytics 4 (G-HXM22WWPKP) is used only in aggregate to understand basic traffic. We keep these to a minimum." },
+        { "h": "Your Choice", "p": "You can disable analytics cookies in your browser or with a content blocker. The site remains fully usable without them." }
       ]
     }
   }

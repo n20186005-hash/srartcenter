@@ -1,0 +1,71 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config/site';
+
+const { messages } = getI18n(Astro.url);
+const l = messages.location;
+
+const rows = [
+  { label: l.addressLabel, value: messages.info.addressVal },
+  { label: l.plusCodeLabel, value: attraction.plusCode },
+  { label: l.coordsLabel, value: `${attraction.lat}, ${attraction.lng}` },
+  { label: l.phoneLabel, value: attraction.phoneDisplay },
+  { label: l.cityLabel, value: messages.info.cityVal },
+  { label: l.hoursLabel, value: l.hoursValue },
+];
+---
+
+<section id="visit" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{l.title}</h2>
+  <p class="mt-2 max-w-3xl leading-relaxed text-brown/70">{l.intro}</p>
+
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      rows.map((row) => (
+        <div class="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-dark">{row.label}</p>
+          <p class="mt-2 text-base font-medium text-brown">{row.value}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <h3 class="mt-10 text-lg font-semibold text-brown">{l.tipsTitle}</h3>
+  <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+    {
+      l.tips.map((tip: string) => (
+        <li class="rounded-2xl border border-black/5 bg-sand/60 p-4 text-sm leading-relaxed text-brown/80">
+          {tip}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-8 flex flex-wrap items-center gap-3">
+    <a
+      href={attraction.mapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark"
+    >
+      🗺️ {l.mapLinkLabel}
+    </a>
+    <a
+      href={`tel:${attraction.phone}`}
+      class="inline-flex items-center gap-2 rounded-full border border-brown/15 bg-white px-5 py-2.5 text-sm font-semibold text-brown transition hover:border-brand/40 hover:text-brand-dark"
+    >
+      ☎️ {attraction.phoneDisplay}
+    </a>
+  </div>
+
+  <p class="mt-4 text-xs leading-relaxed text-brown/50">
+    <a
+      href={attraction.govtTourismUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+    >
+      {messages.sources.govtLinkLabel}
+    </a>
+  </p>
+</section>

@@ -1,0 +1,56 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const s = messages.seasonal;
+---
+
+<section id="seasons" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{s.title}</h2>
+  <p class="mt-2 max-w-3xl font-medium text-brand-dark">{s.subtitle}</p>
+  <p class="mt-3 max-w-3xl text-sm leading-relaxed text-brown/75">{s.intro}</p>
+
+  <div class="mt-8 overflow-x-auto rounded-2xl border border-black/5 bg-white shadow-sm">
+    <table class="w-full min-w-[900px] border-collapse text-left text-sm">
+      <caption class="sr-only">{s.title}</caption>
+      <thead>
+        <tr class="bg-sand/70 text-xs uppercase tracking-wide text-brown/70">
+          {s.tableHead.map((head: string) => <th scope="col" class="px-4 py-3 font-semibold">{head}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          s.seasons.map((season: any) => (
+            <tr class="border-t border-black/5 align-top">
+              <th scope="row" class="px-4 py-4 text-base font-bold text-brown">
+                <span aria-hidden="true" class="mr-1">
+                  {season.icon}
+                </span>
+                {season.name}
+              </th>
+              <td class="px-4 py-4 text-brown/80">{season.months}</td>
+              <td class="px-4 py-4 font-semibold text-brown/90">{season.temp}</td>
+              <td class="px-4 py-4 text-brown/80">{season.rain}</td>
+              <td class="px-4 py-4 text-brown/80">{season.comfort}</td>
+              <td class="px-4 py-4 text-brown/80">{season.crowds}</td>
+              <td class="px-4 py-4 text-brown/80">{season.advice}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-6 grid gap-4 md:grid-cols-2">
+    <div class="rounded-2xl border border-brand/20 bg-sand/50 p-5">
+      <h3 class="text-base font-bold text-brown">{s.bestTitle}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-brown/80">{s.bestLine}</p>
+    </div>
+    <div class="rounded-2xl border border-black/5 bg-white p-5">
+      <h3 class="text-base font-bold text-brown">{s.waterTitle}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-brown/80">{s.waterLine}</p>
+    </div>
+  </div>
+
+  <p class="mt-5 text-xs leading-relaxed text-brown/50">{s.note}</p>
+</section>

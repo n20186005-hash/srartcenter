@@ -1,0 +1,13 @@
+(node:50564) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+*** Received structured exception #0xc0000005: access violation; stack: 7ffea1493277 7ff7b032899d 7ff7b0328a63 7ff7b02fee8c 7ff7b02fee40 7ff7af8f98d6 7ff7af8f9ce0 7ff7ae584a9e 7ff7afa98962 7ff7afaa0026 7ff7afa98e7d 7ff7afaa0026 7ff7afa967b3 7ff7ae5720c6 7ff7b1581d5f 7ffea9a37973 7ffeabbba2f0
+[31m[1m14:48:05[22m [ERROR] [@astrojs/cloudflare][39m An unhandled error occurred while running the [1m"astro:server:setup"[22m hook
+The Workers runtime failed to start. There is likely additional logging output above.
+  [1mLocation:[22m
+    [4mH:\GitHub\srartcenter\node_modules\@astrojs\cloudflare\node_modules\miniflare\dist\src\index.js:68481:13[24m
+  [1mStack trace:[22m
+[2m    at #assembleAndUpdateConfig (H:\GitHub\srartcenter\node_modules\@astrojs\cloudflare\node_modules\miniflare\dist\src\index.js:68481:13)
+    at async Mutex.runWith (H:\GitHub\srartcenter\node_modules\@astrojs\cloudflare\node_modules\miniflare\dist\src\index.js:39105:48)
+    at async _Miniflare._getProxyClient (H:\GitHub\srartcenter\node_modules\@astrojs\cloudflare\node_modules\miniflare\dist\src\index.js:68787:5)
+    at async getPlatformProxy (H:\GitHub\srartcenter\node_modules\@astrojs\cloudflare\node_modules\wrangler\wrangler-dist\cli.js:292168:20)
+    at async withTakingALongTimeMsg (file:///H:/GitHub/srartcenter/node_modules/astro/dist/integrations/hooks.js:32:12)[22m

@@ -2,53 +2,132 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
-import { ogLocale, siteConfig, attraction } from '../config/site';
+import {
+  getLangFromUrl,
+  buildAlternates,
+  canonicalUrl,
+  htmlLangAttr,
+  getI18n,
+} from '../i18n/ui';
+import { ogLocale, siteConfig, attraction, galleryImageUrls } from '../config/site';
 
 interface Props {
   title?: string;
   description?: string;
+  /** Page kind: 'attraction' (default) or 'legal' — legal pages still carry the site entity graph. */
+  pageType?: 'attraction' | 'legal';
 }
 
-const { title, description } = Astro.props;
+const { title, description, pageType = 'attraction' } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const htmlLang = htmlLangAttr(lang);
-const alts = buildAlternates();
-const canonical = alts[lang] ?? alts.km;
+const alts = buildAlternates(Astro.url);
+const canonical = canonicalUrl(Astro.url);
 const { messages } = getI18n(Astro.url);
 const pageTitle = title ?? messages.meta.title;
 const pageDesc = description ?? messages.meta.description;
-const attractionName = messages.header.siteName;
-const year = new Date().getFullYear();
+const ogTitle = messages.meta.ogTitle ?? pageTitle;
+const ogDesc = messages.meta.ogDescription ?? pageDesc;
 
-const jsonLd = {
+const attrId = `${siteConfig.baseUrl}/#attraction`;
+const heroImage = galleryImageUrls[0];
+const locationImage = galleryImageUrls[4];
+
+// ---------------------------------------------------------------------------
+// Structured data (Schema.org / JSON-LD)
+// NOTE: aggregate ratings & reviews are NOT emitted here by design — the
+// Google Maps rating shown on the page stays on-page only, with its source
+// credited in the Reviews and Sources sections.
+// ---------------------------------------------------------------------------
+const attractionLd = {
   '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: attractionName,
-  description: pageDesc,
-  url: canonical,
-  image: `${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`,
+  // The market is both a visitor attraction and the trading place itself, so it
+  // is described as both entities on one node: Google reads the attraction
+  // fields for place results and the LocalBusiness fields for the entity panel.
+  '@type': ['TouristAttraction', 'LocalBusiness'],
+  '@id': attrId,
+  name: attraction.fullName,
+  alternateName: attraction.altNames,
+  // Always the guide's own description: on the legal pages `pageDesc` is the
+  // policy text, which would wrongly become the attraction's description.
+  description: messages.meta.description,
+  url: `${siteConfig.baseUrl}/`,
+  image: [heroImage, locationImage, galleryImageUrls[2], galleryImageUrls[6]],
+  isAccessibleForFree: true,
+  publicAccess: true,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '17000 Hospital St',
-    addressLocality: 'Krong Siem Reap',
-    addressCountry: attraction.country,
+    streetAddress: attraction.streetAddress,
+    addressLocality: attraction.locality,
+    addressRegion: attraction.state,
+    postalCode: attraction.postalCode,
+    addressCountry: attraction.countryCode,
   },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: attraction.lat,
     longitude: attraction.lng,
   },
+  hasMap: attraction.mapsUrl,
+  telephone: attraction.phone,
+  sameAs: [attraction.mapsUrl, attraction.govtTourismUrl],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      dayOfWeek: attraction.openingDays,
       opens: attraction.hoursOpen,
       closes: attraction.hoursClose,
     },
   ],
-  isAccessibleForFree: true,
-  sameAs: [attraction.mapsUrl],
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${canonical}#breadcrumb`,
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: messages.breadcrumb.home,
+      item: `${siteConfig.baseUrl}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: attraction.fullName,
+      item: canonical,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: messages.breadcrumb.city,
+      item: `${siteConfig.baseUrl}/#location`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      name: messages.breadcrumb.province,
+      item: `${siteConfig.baseUrl}/#location`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      name: messages.breadcrumb.country,
+      item: `${siteConfig.baseUrl}/#location`,
+    },
+  ],
+};
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteConfig.baseUrl}/#website`,
+  name: siteConfig.name,
+  alternateName: siteConfig.brandDomain,
+  url: `${siteConfig.baseUrl}/`,
+  inLanguage: ['km', 'en', 'zh-CN'],
+  about: { '@id': attrId },
 };
 ---
 
@@ -57,24 +136,66 @@ const jsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title / description / keywords -->
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     {messages.meta.keywords && <meta name="keywords" content={messages.meta.keywords} />}
+    <meta
+      name="robots"
+      content={pageType === 'legal'
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1'}
+    />
+    <meta name="author" content={`${siteConfig.name} Visitor Guide`} />
+    <meta name="theme-color" content={siteConfig.themeColor} />
+
+    <!-- Canonical + hreflang -->
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="km" href={alts.km} />
     <link rel="alternate" hreflang="en" href={alts.en} />
     <link rel="alternate" hreflang="zh" href={alts.zh} />
     <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
 
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDesc} />
+    <!-- Open Graph -->
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDesc} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
-    <meta property="og:image" content={`${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={`${siteConfig.baseUrl}/gallery/${siteConfig.slug}-1.jpg`} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={messages.meta.ogImageAlt ?? attraction.fullName} />
+    <meta
+      property="og:image:secure_url"
+      content={heroImage}
+    />
 
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDesc} />
+    <meta name="twitter:image" content={heroImage} />
+    <meta name="twitter:image:alt" content={messages.meta.ogImageAlt ?? attraction.fullName} />
+
+    <!-- Geo / entity signals -->
+    <meta name="geo.region" content={attraction.regionCode} />
+    <meta name="geo.placename" content={`${attraction.locality}, ${attraction.state}, ${attraction.country}`} />
+    <meta name="geo.position" content={`${attraction.lat};${attraction.lng}`} />
+    <meta name="ICBM" content={`${attraction.lat}, ${attraction.lng}`} />
+
+    <!-- PWA -->
+    <meta name="application-name" content={siteConfig.name} />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={messages.hero.altNames ?? siteConfig.name} />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href={siteConfig.manifestPath} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -82,7 +203,21 @@ const jsonLd = {
       rel="stylesheet"
     />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
+    <!-- Google Analytics 4 -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.ga4Id}`}></script>
+    <script
+      is:inline
+      set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${siteConfig.ga4Id}',{anonymize_ip:true});gtag('set','language',document.documentElement.lang||'km');`}
+    ></script>
+
+    <!-- Structured data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionLd)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteLd)}></script>
+    {pageType === 'attraction' && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
+    )}
 
     <slot name="head" />
   </head>
@@ -92,5 +227,16 @@ const jsonLd = {
       <slot />
     </main>
     <Footer />
+
+    <script is:inline>
+      // Progressive Web App: register the service worker for offline support.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {
+            /* Offline support is optional; ignore registration failures. */
+          });
+        });
+      }
+    </script>
   </body>
 </html>

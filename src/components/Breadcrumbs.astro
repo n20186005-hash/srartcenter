@@ -1,0 +1,32 @@
+---
+import { getI18n, getLangFromUrl } from '../i18n/ui';
+import { attraction } from '../config/site';
+
+const lang = getLangFromUrl(Astro.url);
+const { messages } = getI18n(Astro.url);
+const b = messages.breadcrumb;
+const homeHref = lang === 'km' ? '/' : `/${lang}/`;
+
+const trail = [
+  { name: b.home, href: homeHref },
+  { name: attraction.fullName, href: '#about' },
+  { name: b.city, href: '#location' },
+  { name: b.province, href: '#location' },
+  { name: b.country, href: '#location' },
+];
+---
+
+<nav aria-label={b.label} class="mx-auto max-w-6xl px-4 pt-6">
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-brown/60">
+    {
+      trail.map((item, i) => (
+        <li class="flex items-center gap-2">
+          {i > 0 && <span aria-hidden="true" class="text-brand/50">›</span>}
+          <a href={item.href} class="transition hover:text-brand-dark">
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

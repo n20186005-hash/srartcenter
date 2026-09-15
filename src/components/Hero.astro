@@ -1,13 +1,24 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { attraction, siteConfig, absoluteUrl } from '../config/site';
+
 const { messages } = getI18n(Astro.url);
 const hero = messages.hero;
+const reviews = messages.reviews;
+
+// Main visual. Alt text binds the image to the attraction entity.
+const heroImage = absoluteUrl(`/gallery/${siteConfig.slug}-5.jpg`);
 ---
 
 <section id="overview" class="relative overflow-hidden bg-night text-white">
   <img
-    src="https://www.srartcenter.com/gallery/siem-reap-art-center-night-market-5.jpg"
-    alt=""
+    src={heroImage}
+    alt={hero.imageAlt}
+    width="1600"
+    height="1067"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover"
   />
   <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-black/70"></div>
@@ -21,9 +32,42 @@ const hero = messages.hero;
     <h1 class="text-balance text-4xl font-extrabold leading-tight sm:text-6xl">
       {hero.title}
     </h1>
+    <p class="mt-4 text-xs font-medium tracking-wide text-amber-100/80 sm:text-sm">
+      {hero.altNames}
+    </p>
     <p class="mt-6 max-w-2xl text-balance text-base text-white/80 sm:text-lg">
       {hero.subtitle}
     </p>
+
+    <!-- Google Maps aggregate rating (page display only, never in JSON-LD) -->
+    <div class="mt-7 flex flex-col items-center gap-2">
+      <a
+        href={attraction.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${hero.ratingAria}: ${attraction.rating} / ${attraction.ratingOutOf} - ${attraction.reviewCountLabel}`}
+        class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur transition hover:bg-white/20"
+      >
+        <span aria-hidden="true" class="text-base text-amber-300">★</span>
+        <span class="text-lg font-extrabold">{attraction.rating}</span>
+        <span class="text-xs text-white/75">({attraction.reviewCountLabel})</span>
+        <span class="rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white/80">
+          {reviews.sourceBadge}
+        </span>
+      </a>
+      <p class="max-w-xl text-[11px] leading-relaxed text-white/60">
+        {reviews.syncLinePrefix}{' '}
+        <a
+          href={attraction.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-amber-200/90 underline decoration-amber-200/40 underline-offset-2 transition hover:text-amber-100"
+        >
+          {reviews.syncLineLink}↗
+        </a>
+      </p>
+    </div>
+
     <div class="mt-9 flex flex-col gap-3 sm:flex-row">
       <a
         href="#location"

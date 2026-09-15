@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Siem Reap Art Center Night Market">
+  <rect width="64" height="64" rx="15" fill="#E2722B" />
+  <rect x="24" y="9" width="16" height="5" rx="2" fill="#3B2A20" />
+  <rect x="24" y="50" width="16" height="5" rx="2" fill="#3B2A20" />
+  <path d="M32 55v7" stroke="#3B2A20" stroke-width="3" stroke-linecap="round" />
+  <ellipse cx="32" cy="33" rx="14" ry="17" fill="#F7C948" />
+  <ellipse cx="32" cy="33" rx="11" ry="14" fill="none" stroke="#E28B2B" stroke-width="2" opacity="0.55" />
+  <path d="M26 18c-3 5-3 25 0 30M38 18c3 5 3 25 0 30" stroke="#E28B2B" stroke-width="2" fill="none" opacity="0.45" />
+</svg>

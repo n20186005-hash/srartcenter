@@ -1,0 +1,245 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getWeather, weatherCodeKey, weatherIcon } from '../lib/weather';
+import { buildAdvice, isSevereDay, windLevel } from '../lib/advice';
+
+const { lang, messages } = getI18n(Astro.url);
+const w = messages.weather;
+
+// Rendered on the server so visitors never wait on a third-party weather call.
+const data = await getWeather();
+
+// Only the rules that currently apply are rendered; empty groups disappear.
+const advice = buildAdvice(data);
+
+const LOCALES: Record<string, string> = { km: 'km-KH', en: 'en-US', zh: 'zh-CN' };
+const localeTag = LOCALES[lang] ?? 'en-US';
+
+const codeLabel = (code: number) => w.codes[weatherCodeKey(code)] ?? '';
+
+const weekday = (date: string) => {
+  const [y, m, d] = date.split('-').map(Number);
+  return new Intl.DateTimeFormat(localeTag, { weekday: 'short', timeZone: 'UTC' }).format(
+    new Date(Date.UTC(y, m - 1, d))
+  );
+};
+
+const dayLabel = (date: string, index: number) => (index === 0 ? w.today : weekday(date));
+const timeOf = (stamp: string) => stamp.slice(11, 16);
+
+// Fills {placeholders} of a localized advice sentence.
+const fill = (item: { key: string; params?: Record<string, string | number> }) => {
+  const template: string = w.smart?.rules?.[item.key] ?? '';
+  if (!item.params) return template;
+  return template.replace(/\{(\w+)\}/g, (match, key) =>
+    item.params && item.params[key] !== undefined ? String(item.params[key]) : match
+  );
+};
+
+const hasAdvice =
+  advice.cautions.length + advice.clothing.length + advice.activities.length + advice.items.length > 0;
+
+// Wind is shown with its gust, and with the everyday "force" number once it
+// is strong enough that a visitor would notice it.
+const gustLine = (gust: number) => {
+  const level = windLevel(gust);
+  const template: string = level >= 5 ? (w.windSub ?? '') : (w.gustSub ?? '');
+  return template.replace('{gust}', String(gust)).replace('{level}', String(level));
+};
+
+const tiles = data.ok && data.current && data.today
+  ? [
+      { icon: '🌧️', label: w.rainChance, value: `${data.today.pop}%` },
+      { icon: '💧', label: w.humidity, value: `${data.current.humidity}%` },
+      {
+        icon: '🌬️',
+        label: w.wind,
+        value: `${data.current.wind} ${w.units.wind}`,
+        sub: gustLine(data.current.gust),
+      },
+      { icon: '🔆', label: w.uvMax, value: String(data.today.uvMax) },
+      { icon: '🌅', label: w.sunrise, value: data.today.sunrise },
+      { icon: '🌇', label: w.sunset, value: data.today.sunset },
+    ]
+  : [];
+---
+
+<section id="weather" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <p class="inline-flex items-center gap-2 rounded-full bg-sand px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark">
+    🌤️ {w.eyebrow}
+  </p>
+  <h2 class="mt-4 text-3xl font-bold text-brown">{w.title}</h2>
+  <p class="mt-2 max-w-3xl text-brown/70">{w.intro}</p>
+
+  {
+    data.ok && data.current && data.today ? (
+      <>
+        {/* Warnings first: when the weather is a safety matter, it outranks every suggestion below. */}
+        {advice.alerts.length > 0 ? (
+          <div class="mt-8 rounded-3xl border-2 border-red-300 bg-red-50 p-5 sm:p-6">
+            <h3 class="flex items-center gap-2 text-base font-bold text-red-800">
+              <span aria-hidden="true">🚨</span>
+              {w.smart.alertsTitle}
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm leading-relaxed text-red-900">
+              {advice.alerts.map((item) => (
+                <li class="flex gap-2">
+                  <span aria-hidden="true">{item.icon}</span>
+                  <span>{fill(item)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p class="mt-8 flex items-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
+            <span aria-hidden="true">🛡️</span>
+            {w.smart.noAlerts}
+          </p>
+        )}
+
+        <div class="mt-6 overflow-hidden rounded-3xl bg-[#2B1A12] text-white shadow-lg ring-1 ring-black/5">
+          <div class="grid gap-8 p-6 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-gold">{w.nowLabel}</p>
+              <div class="mt-3 flex items-end gap-3">
+                <span class="text-6xl font-extrabold leading-none">{data.current.temp}</span>
+                <span class="pb-1 text-xl font-semibold text-white/70">{w.units.temp}</span>
+                <span aria-hidden="true" class="pb-1 text-4xl">{weatherIcon(data.current.code, data.current.isDay)}</span>
+              </div>
+              <p class="mt-3 text-lg font-semibold text-amber-100">{codeLabel(data.current.code)}</p>
+              <p class="mt-2 text-sm text-white/70">
+                {w.feelsLike} {data.current.feels}{w.units.temp} · {w.todayRange} {data.today.min}–{data.today.max}
+                {w.units.temp}
+              </p>
+              <p class="mt-4 text-xs text-white/50">
+                {w.updatedLabel} {timeOf(data.observedAt)} · {w.localTimeLabel} (GMT+7){data.stale && ` · ${w.staleLabel}`}
+              </p>
+            </div>
+
+            <dl class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {tiles.map((item) => (
+                <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+                  <dt class="text-[11px] font-medium uppercase tracking-wide text-white/60">
+                    <span aria-hidden="true">{item.icon}</span> {item.label}
+                  </dt>
+                  <dd class="mt-1 text-lg font-bold">{item.value}</dd>
+                  {item.sub && <dd class="mt-0.5 text-[11px] text-white/55">{item.sub}</dd>}
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {data.evening && (
+            <div class="border-t border-white/10 bg-white/5 px-6 py-5 sm:px-8">
+              <p class="text-sm font-semibold text-amber-100">🕓 {w.eveningTitle}</p>
+              <div class="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/80">
+                <span>
+                  {w.eveningRange}: <strong class="font-bold text-white">{data.evening.min}–{data.evening.max}{w.units.temp}</strong>
+                </span>
+                <span>
+                  {w.eveningRain}: <strong class="font-bold text-white">{data.evening.pop}%</strong>
+                </span>
+                <span>
+                  {w.eveningWind}: <strong class="font-bold text-white">{data.evening.windMax} {w.units.wind}</strong>
+                </span>
+                {data.evening.feelsMax > 0 && (
+                  <span>
+                    {w.feelsLike}: <strong class="font-bold text-white">{data.evening.feelsMax}{w.units.temp}</strong>
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {hasAdvice && (
+          <div class="mt-6 rounded-3xl border border-black/5 bg-white p-6 sm:p-8">
+            <h3 class="text-lg font-bold text-brown">{w.smart.title}</h3>
+
+            {advice.cautions.length > 0 && (
+              <div class="mt-4 rounded-2xl border border-amber-200 bg-amber-50/70 p-4">
+                <p class="text-sm font-bold text-amber-900">⚠️ {w.smart.cautionsTitle}</p>
+                <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-amber-900/90">
+                  {advice.cautions.map((item) => (
+                    <li class="flex gap-2">
+                      <span aria-hidden="true">{item.icon}</span>
+                      <span>{fill(item)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div class="mt-5 grid gap-4 sm:grid-cols-3">
+              {[
+                { icon: '👕', title: w.smart.clothingTitle, items: advice.clothing },
+                { icon: '🎯', title: w.smart.activitiesTitle, items: advice.activities },
+                { icon: '🎒', title: w.smart.itemsTitle, items: advice.items },
+              ]
+                .filter((group) => group.items.length > 0)
+                .map((group) => (
+                  <div class="rounded-2xl border border-black/5 bg-sand/40 p-4">
+                    <p class="text-sm font-bold text-brown">
+                      <span aria-hidden="true">{group.icon}</span> {group.title}
+                    </p>
+                    <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-brown/80">
+                      {group.items.map((item) => (
+                        <li class="flex gap-2">
+                          <span aria-hidden="true">{item.icon}</span>
+                          <span>{fill(item)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+            </div>
+
+            <a href="#seasons" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark hover:underline">
+              📅 {w.smart.climateLink}
+            </a>
+          </div>
+        )}
+
+        <div class="mt-6 rounded-3xl border border-black/5 bg-sand/50 p-6 sm:p-8">
+          <h3 class="text-lg font-bold text-brown">{w.forecastTitle}</h3>
+          <ul class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+            {data.days.map((day, index) => (
+              <li
+                class:list={[
+                  'rounded-2xl border p-4 text-center',
+                  index === 0 ? 'border-brand/40 bg-white' : 'border-black/5 bg-white/70',
+                  isSevereDay(day) && 'ring-1 ring-red-200',
+                ]}
+              >
+                <p class="text-xs font-semibold uppercase tracking-wide text-brown/60">{dayLabel(day.date, index)}</p>
+                <p aria-hidden="true" class="mt-2 text-2xl">{weatherIcon(day.code, true)}</p>
+                <p class="sr-only">{codeLabel(day.code)}</p>
+                <p class="mt-2 text-sm font-bold text-brown">
+                  {day.max}{w.units.temp}
+                  <span class="ml-1 font-normal text-brown/55">{day.min}{w.units.temp}</span>
+                </p>
+                <p class="mt-1 text-xs text-brand-dark">🌧️ {day.pop}%</p>
+                {isSevereDay(day) && (
+                  <p class="mt-1 text-xs font-semibold text-red-600">
+                    <span aria-hidden="true">⚠️</span> <span class="sr-only">{w.smart.severeDay}</span>
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
+    ) : (
+      <div class="mt-8 rounded-3xl border border-black/5 bg-sand/50 p-6 sm:p-8">
+        <h3 class="text-lg font-bold text-brown">{w.unavailable.title}</h3>
+        <p class="mt-2 max-w-3xl text-sm leading-relaxed text-brown/75">{w.unavailable.body}</p>
+        <a
+          href="#seasons"
+          class="mt-4 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark"
+        >
+          📅 {w.unavailable.cta}
+        </a>
+      </div>
+    )
+  }
+</section>

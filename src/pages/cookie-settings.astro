@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LegalPage from '../components/LegalPage.astro';
+import { legalMeta } from '../i18n/ui';
+
+export const prerender = true;
+
+const meta = legalMeta(Astro.url, 'cookies');
 ---
 
-<BaseLayout>
+<BaseLayout pageType="legal" title={meta.title} description={meta.description}>
   <LegalPage section="cookies" />
 </BaseLayout>
