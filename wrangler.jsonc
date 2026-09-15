@@ -9,11 +9,29 @@
   // Static output (images, icons, prerendered legal pages, _astro bundles) is served
   // straight from the assets binding; every other request is handled by the Worker,
   // which renders the guide pages and their live weather block.
+  //
+  // The legal pages are prerendered, so by default they would be served straight
+  // from assets and never reach the middleware. Search Console indexed them under
+  // several spellings (non-www host, missing trailing slash), so these paths run
+  // through the Worker first: the middleware either 301s to the canonical URL or
+  // falls through, and the adapter then serves the static file from ASSETS.
+  // Scoped to globs so images and _astro bundles keep the fast asset path.
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "none"
+    "not_found_handling": "none",
+    "run_worker_first": [
+      "/privacy-policy*",
+      "/terms-of-service*",
+      "/cookie-settings*",
+      "/en/privacy-policy*",
+      "/en/terms-of-service*",
+      "/en/cookie-settings*",
+      "/zh/privacy-policy*",
+      "/zh/terms-of-service*",
+      "/zh/cookie-settings*"
+    ]
   },
   "observability": {
     "enabled": true

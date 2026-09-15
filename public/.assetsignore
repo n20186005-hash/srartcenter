@@ -1,0 +1,5 @@
+# The Worker entrypoint lives at dist/_worker.js (see wrangler.jsonc "main").
+# Without this ignore file wrangler refuses to deploy: it would otherwise upload
+# the server bundle as a public static asset. This file is copied into dist/
+# from public/ at build time.
+_worker.js
