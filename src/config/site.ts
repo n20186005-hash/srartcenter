@@ -29,7 +29,7 @@ export const siteConfig = {
   manifestPath: '/manifest.webmanifest',
   serviceWorkerPath: '/sw.js',
   // Month the Google Maps rating / review count on this page was last read.
-  ratingSyncedAt: '2026-09',
+  ratingSyncedAt: '2026-10',
 };
 
 export const ogLocale: Record<string, string> = {
@@ -40,7 +40,7 @@ export const ogLocale: Record<string, string> = {
 
 // Public, factual attraction data used by JSON-LD and shared components.
 // Address, coordinates, phone, rating and links come from the attraction's
-// public Google Maps listing (read 2026-09).
+// public Google Maps listing (read 2026-10).
 export const attraction = {
   fullName: 'Siem Reap Art Center Night Market',
   // "srartcenter" = Siem Reap Art Center, the short / colloquial form.
@@ -74,8 +74,8 @@ export const attraction = {
   // Aggregate rating shown on the page only. Never emitted into JSON-LD.
   rating: 4.2,
   ratingOutOf: 5,
-  reviewCount: 6082,
-  reviewCountLabel: '6,082',
+  reviewCount: 6092,
+  reviewCountLabel: '6,092',
   // Authoritative tourism portals (.gov.kh / .org) used as outbound references.
   govtTourismUrl: 'https://tourism.gov.kh/en/',
   govtTourismLabel: 'Cambodia Ministry of Tourism',

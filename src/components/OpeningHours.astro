@@ -24,5 +24,23 @@ const o = messages.opening;
     </div>
   </div>
 
+  {
+    o.bestTimeValue && (
+      <p class="mt-4 flex items-start gap-2 rounded-xl bg-sand/60 px-4 py-3 text-sm leading-relaxed text-brown/80">
+        <span aria-hidden="true" class="mt-0.5">🕓</span>
+        <span><strong class="font-semibold text-brown">{o.bestTimeLabel}:</strong> {o.bestTimeValue}</span>
+      </p>
+    )
+  }
+
   <p class="mt-4 text-sm text-brown/60">⚠️ {o.note}</p>
+
+  {
+    o.verifiedValue && (
+      <p class="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800">
+        <span aria-hidden="true">✅</span>
+        {o.verifiedLabel}: {o.verifiedValue}
+      </p>
+    )
+  }
 </section>

@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Siem Reap Art Center Night Market: Hours, Location & Guide",
-    "description": "Night market on Hospital St in central Siem Reap, open Monday to Saturday 16:00–23:00. Handmade crafts, Khmer street food and souvenirs, with map and directions.",
+    "title": "Siem Reap Art Center Night Market – Hours & Visitor Guide",
+    "description": "Plan your visit to Siem Reap Art Center Night Market. Find opening hours, location, local crafts, shopping tips, and directions from Pub Street.",
     "keywords": "Siem Reap Art Center Night Market, Siem Reap Art Center, Siem Reap night market, night market Siem Reap opening hours, Art Centre Night Market, Hospital St Siem Reap, Cambodia travel guide, 暹粒藝術中心夜市, 暹粒艺术中心夜市, មជ្ឈមណ្ឌលសិល្បៈខេត្តសៀមរាប",
-    "ogTitle": "Siem Reap Art Center Night Market — Hours, Location & Guide",
-    "ogDescription": "Open Monday to Saturday 16:00–23:00 on Hospital St, Siem Reap. Crafts, street food and souvenirs in the town centre.",
+    "ogTitle": "Siem Reap Art Center Night Market – Hours & Visitor Guide",
+    "ogDescription": "Opening hours, location, local crafts, shopping tips and directions from Pub Street for Siem Reap Art Center Night Market.",
     "ogImageAlt": "Siem Reap Art Center Night Market in Siem Reap",
     "guideEdition": "Guide edition"
   },
@@ -28,6 +28,7 @@
       "about": "About",
       "experience": "Experience",
       "hours": "Hours",
+      "markets": "Markets",
       "transport": "Getting There",
       "reviews": "Reviews",
       "sources": "Sources",
@@ -54,7 +55,8 @@
       "plusCode": "Plus Code",
       "phone": "Phone",
       "city": "City",
-      "country": "Country"
+      "country": "Country",
+      "admission": "Admission"
     },
     "nameVal": "Siem Reap Art Center Night Market",
     "typeVal": "Night Market",
@@ -64,6 +66,7 @@
     "phoneVal": "+855 63 963 331",
     "cityVal": "Krong Siem Reap, Siem Reap Province",
     "countryVal": "Cambodia",
+    "admissionVal": "Free — no general admission ticket",
     "mapCta": "Open in Google Maps"
   },
   "entity": {
@@ -87,6 +90,10 @@
     "daysTime": "16:00 – 23:00",
     "sundayLabel": "Sunday",
     "sundayStatus": "Closed",
+    "bestTimeLabel": "Best time to visit",
+    "bestTimeValue": "Arrive between 17:00 and 21:00; evenings from November to February are the most comfortable.",
+    "verifiedLabel": "Last checked",
+    "verifiedValue": "October 2026",
     "note": "Opening hours may change during holidays or special events."
   },
   "experience": {
@@ -358,11 +365,11 @@
     "ratingValue": "4.2",
     "ratingOutOf": "out of 5",
     "reviewsLabel": "Reviews",
-    "reviewCount": "6,082",
+    "reviewCount": "6,092",
     "sourceBadge": "Google Maps",
-    "syncLinePrefix": "Ratings and review counts are synced from Google Maps user reviews · September 2026 ·",
+    "syncLinePrefix": "Ratings and review counts are synced from Google Maps user reviews · October 2026 ·",
     "syncLineLink": "View all reviews on Google Maps",
-    "sourceNote": "Synced from Google Maps user reviews, last synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceNote": "Synced from Google Maps user reviews, last synced October 2026; copyright belongs to the original authors and Google Maps.",
     "cta": "View all reviews on Google Maps",
     "categoryLabel": "Category",
     "categoryValue": "Night market",
@@ -380,8 +387,8 @@
     "intro": "This page is a non-profit visitor information guide. The facts below come from the public sources listed here, and nothing on this page is a commercial recommendation.",
     "ratingLabel": "Reviews",
     "syncedLabel": "Synced",
-    "syncedValue": "September 2026",
-    "ratingSourceNote": "Synced from Google Maps user reviews, last synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "syncedValue": "October 2026",
+    "ratingSourceNote": "Synced from Google Maps user reviews, last synced October 2026; copyright belongs to the original authors and Google Maps.",
     "ratingLinkLabel": "View all reviews on Google Maps",
     "mapsLabel": "Location data",
     "mapsValue": "Google Maps place listing — 9V24+W2F, 17000 Hospital St, Krong Siem Reap, Cambodia",
@@ -430,7 +437,7 @@
       },
       {
         "q": "Where do the ratings and reviews on this page come from?",
-        "a": "The 4.2 rating and 6,082 reviews shown on this page are synced from Google Maps user reviews, last synchronised September 2026. Copyright belongs to the original authors and Google Maps; use the 'View all reviews on Google Maps' link for the full list."
+        "a": "The 4.2 rating and 6,092 reviews shown on this page are synced from Google Maps user reviews, last synchronised October 2026. Copyright belongs to the original authors and Google Maps; use the 'View all reviews on Google Maps' link for the full list."
       },
       {
         "q": "What is the weather like, and which season is best for an evening visit?",
@@ -457,7 +464,7 @@
   "footer": {
     "siteName": "Siem Reap Art Center Night Market",
     "tagline": "An independent non-profit visitor information guide — not a booking or commercial site.",
-    "disclaimer": "This website is an independent non-profit visitor information project and is not affiliated with any government agency or official organization. Attraction information is cross-checked against publicly available materials from Siem Reap Municipality, the Siem Reap Provincial Tourism Department, and the Cambodia Ministry of Tourism. It contains no commercial recommendations. All image property and copyright on this website belong to the original photographers. Ratings and review counts are synced from Google Maps user reviews (last synchronised September 2026) and copyright in them belongs to the original authors and Google Maps.",
+    "disclaimer": "This website is an independent non-profit visitor information project and is not affiliated with any government agency or official organization. Attraction information is cross-checked against publicly available materials from Siem Reap Municipality, the Siem Reap Provincial Tourism Department, and the Cambodia Ministry of Tourism. It contains no commercial recommendations. All image property and copyright on this website belong to the original photographers. Ratings and review counts are synced from Google Maps user reviews (last synchronised October 2026) and copyright in them belongs to the original authors and Google Maps.",
     "rights": "© {year} Siem Reap Art Center Night Market Guide. Non-profit travel information.",
     "navTitle": "Sections",
     "langTitle": "Languages",
@@ -730,6 +737,18 @@
       { "icon": "🙏", "title": "Respect the working day", "desc": "Stalls are small and often run by one person. Do not block an aisle to take photographs, do not rearrange a display without asking, and move on when a vendor is serving other customers." }
     ],
     "note": "This page is written as non-commercial information: it names no business, accepts no sponsorship and takes no commission from any purchase made by readers."
+  },
+  "compare": {
+    "title": "Art Center Night Market vs Other Siem Reap Night Markets",
+    "intro": "Siem Reap has several evening markets. They sit close together but serve different needs — knowing the difference helps you choose the right one.",
+    "tableHead": ["Market", "Where", "Known for", "Best for"],
+    "items": [
+      { "name": "Art Center Night Market", "where": "Hospital St (Street 17000), south of the river", "known": "Craft and souvenir rows, food stalls, open until 23:00", "best": "Buying handicrafts and a relaxed evening walk" },
+      { "name": "Made in Cambodia Market", "where": "Near Pub Street / Old Market", "known": "Curated local-maker stalls with live music", "best": "Quality gifts, an easy walk from Pub Street" },
+      { "name": "Angkor Night Market", "where": "Near Pub Street", "known": "One of the original night markets, general souvenirs", "best": "A first taste of Siem Reap nightlife" },
+      { "name": "Riverside Night Market", "where": "Along the Siem Reap River", "known": "Riverside setting with mixed stalls", "best": "A riverside stroll after dinner" }
+    ],
+    "note": "Opening hours and stall lists change. This page covers the Art Center Night Market and is not affiliated with the other markets."
   },
   "legal": {
     "privacy": {

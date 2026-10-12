@@ -28,6 +28,7 @@
       "about": "关于",
       "experience": "游览体验",
       "hours": "开放时间",
+      "markets": "夜市比较",
       "transport": "如何到达",
       "reviews": "评分与评价",
       "sources": "资料来源",
@@ -54,7 +55,8 @@
       "plusCode": "位置代码",
       "phone": "电话",
       "city": "城市",
-      "country": "国家"
+      "country": "国家",
+      "admission": "门票"
     },
     "nameVal": "暹粒艺术中心夜市",
     "typeVal": "夜市",
@@ -64,6 +66,7 @@
     "phoneVal": "+855 63 963 331",
     "cityVal": "暹粒市（Krong Siem Reap），暹粒省",
     "countryVal": "柬埔寨",
+    "admissionVal": "免费，无需通用门票",
     "mapCta": "在 Google 地图中打开"
   },
   "entity": {
@@ -87,6 +90,10 @@
     "daysTime": "16:00 – 23:00",
     "sundayLabel": "周日",
     "sundayStatus": "休息",
+    "bestTimeLabel": "建议游览时段",
+    "bestTimeValue": "建议 17:00–21:00 到访；11 月至次年 2 月的夜晚最为舒适。",
+    "verifiedLabel": "最近核对",
+    "verifiedValue": "2026 年 10 月",
     "note": "营业时间可能因节假日或特殊活动调整，请出行前确认。"
   },
   "experience": {
@@ -358,11 +365,11 @@
     "ratingValue": "4.2",
     "ratingOutOf": "满分 5 分",
     "reviewsLabel": "评价数",
-    "reviewCount": "6,082",
+    "reviewCount": "6,092",
     "sourceBadge": "Google 地图",
-    "syncLinePrefix": "评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 9 月 ·",
+    "syncLinePrefix": "评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 10 月 ·",
     "syncLineLink": "点击查看谷歌地图全部评价",
-    "sourceNote": "同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有。",
+    "sourceNote": "同步自 Google 地图用户评价，同步时间 2026 年 10 月；版权归原作者与 Google 地图所有。",
     "cta": "在谷歌地图查看全部评价",
     "categoryLabel": "类别",
     "categoryValue": "夜市",
@@ -380,8 +387,8 @@
     "intro": "本页为非营利游客信息指南，下列事实均取自此处列出的公开来源，本页不含任何商业推荐。",
     "ratingLabel": "评价",
     "syncedLabel": "同步时间",
-    "syncedValue": "2026 年 9 月",
-    "ratingSourceNote": "同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有。",
+    "syncedValue": "2026 年 10 月",
+    "ratingSourceNote": "同步自 Google 地图用户评价，同步时间 2026 年 10 月；版权归原作者与 Google 地图所有。",
     "ratingLinkLabel": "在谷歌地图查看全部评价",
     "mapsLabel": "位置资料",
     "mapsValue": "Google 地图地点页面 —— 9V24+W2F, 17000 Hospital St, 暹粒市, 柬埔寨",
@@ -430,7 +437,7 @@
       },
       {
         "q": "本页的评分与评价来自哪里？",
-        "a": "本页展示的 4.2 分与 6,082 条评价同步自谷歌地图用户评价，同步时间为 2026 年 9 月；版权归原作者与 Google 地图所有。如需查看全部评价，请使用「在谷歌地图查看全部评价」链接。"
+        "a": "本页展示的 4.2 分与 6,092 条评价同步自谷歌地图用户评价，同步时间为 2026 年 10 月；版权归原作者与 Google 地图所有。如需查看全部评价，请使用「在谷歌地图查看全部评价」链接。"
       },
       {
         "q": "当地天气怎么样？哪个季节最适合夜间游览？",
@@ -457,7 +464,7 @@
   "footer": {
     "siteName": "暹粒艺术中心夜市",
     "tagline": "一个独立的非营利游客信息指南——并非订票或商业网站。",
-    "disclaimer": "本网站是一个独立的非营利游客信息项目，与任何政府机构或官方组织均无隶属关系。景点信息对照考证自暹粒市政厅、暹粒省旅游局与柬埔寨国家旅游局公开资料，不含任何商业性推荐。本网站所展示的所有图片产权及版权均归原摄影者所有。评分与评价数同步自 Google 地图用户评价（同步时间 2026 年 9 月），其版权归原作者与 Google 地图所有。",
+    "disclaimer": "本网站是一个独立的非营利游客信息项目，与任何政府机构或官方组织均无隶属关系。景点信息对照考证自暹粒市政厅、暹粒省旅游局与柬埔寨国家旅游局公开资料，不含任何商业性推荐。本网站所展示的所有图片产权及版权均归原摄影者所有。评分与评价数同步自 Google 地图用户评价（同步时间 2026 年 10 月），其版权归原作者与 Google 地图所有。",
     "rights": "© {year} 暹粒艺术中心夜市指南。非营利旅游信息。",
     "navTitle": "栏目",
     "langTitle": "语言",
@@ -730,6 +737,18 @@
       { "icon": "🙏", "title": "尊重他人的工作时间", "desc": "摊位很小，常常只有一人在经营。不要为了拍照堵住通道；未经允许不要翻动陈列商品；摊主正在接待其他客人时请稍等。" }
     ],
     "note": "本页以非商业信息形式撰写：不指名任何商户，不接受赞助，也不从读者购买中获取佣金。"
+  },
+  "compare": {
+    "title": "艺术中心夜市 vs 暹粒其他夜市",
+    "intro": "暹粒有几处夜间集市，彼此相距不远，但定位不同——弄清楚区别，才能选对想去的那一个。",
+    "tableHead": ["夜市", "位置", "特色", "适合"],
+    "items": [
+      { "name": "艺术中心夜市", "where": "医院街（17000 街），河南岸", "known": "手工艺与纪念品排档、小吃摊，营业至 23:00", "best": "购买手工艺品、悠闲夜逛" },
+      { "name": "Made in Cambodia Market", "where": "靠近 Pub Street／老市场", "known": "精选本地手作摊位，常有现场音乐", "best": "挑选有质感的礼物，步行即可从 Pub Street 到达" },
+      { "name": "吴哥夜市（Angkor Night Market）", "where": "靠近 Pub Street", "known": "暹粒最早的夜市之一，以综合纪念品为主", "best": "初次感受暹粒夜生活" },
+      { "name": "Riverside Night Market", "where": "沿暹粒河", "known": "河滨环境，摊位类型混合", "best": "饭后沿河散步" }
+    ],
+    "note": "营业时间与摊位会有变动。本页只介绍艺术中心夜市，与其他夜市无隶属关系。"
   },
   "legal": {
     "privacy": {

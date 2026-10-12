@@ -1,0 +1,37 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const c = messages.compare;
+const head = c.tableHead;
+---
+
+<section id="markets" class="anchor-offset mx-auto max-w-5xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{c.title}</h2>
+  <p class="mt-3 max-w-3xl leading-relaxed text-brown/75">{c.intro}</p>
+
+  <div class="mt-8 overflow-x-auto rounded-2xl border border-black/5 bg-white shadow-sm">
+    <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+      <thead>
+        <tr class="border-b border-black/5 bg-sand/50 text-brown/70">
+          {head.map((h: string) => (
+            <th class="px-4 py-3 font-semibold">{h}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          c.items.map((item: { name: string; where: string; known: string; best: string }) => (
+            <tr class="border-b border-black/5 align-top last:border-0">
+              <td class="px-4 py-3 font-semibold text-brown">{item.name}</td>
+              <td class="px-4 py-3 text-brown/75">{item.where}</td>
+              <td class="px-4 py-3 text-brown/75">{item.known}</td>
+              <td class="px-4 py-3 text-brown/75">{item.best}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mt-4 text-sm text-brown/60">ℹ️ {c.note}</p>
+</section>
