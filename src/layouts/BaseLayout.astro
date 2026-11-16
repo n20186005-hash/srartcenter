@@ -15,7 +15,7 @@ interface Props {
   title?: string;
   description?: string;
   /** Page kind: 'attraction' (default) or 'legal' — legal pages still carry the site entity graph. */
-  pageType?: 'attraction' | 'legal';
+  pageType?: 'attraction' | 'legal' | 'guide';
 }
 
 const { title, description, pageType = 'attraction' } = Astro.props;
@@ -26,8 +26,8 @@ const canonical = canonicalUrl(Astro.url);
 const { messages } = getI18n(Astro.url);
 const pageTitle = title ?? messages.meta.title;
 const pageDesc = description ?? messages.meta.description;
-const ogTitle = messages.meta.ogTitle ?? pageTitle;
-const ogDesc = messages.meta.ogDescription ?? pageDesc;
+const ogTitle = pageType === 'guide' ? pageTitle : (messages.meta.ogTitle ?? pageTitle);
+const ogDesc = pageType === 'guide' ? pageDesc : (messages.meta.ogDescription ?? pageDesc);
 
 const attrId = `${siteConfig.baseUrl}/#attraction`;
 const heroImage = galleryImageUrls[0];
@@ -129,6 +129,16 @@ const websiteLd = {
   inLanguage: ['km', 'en', 'zh-CN'],
   about: { '@id': attrId },
 };
+const guideLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: pageDesc,
+  mainEntityOfPage: canonical,
+  inLanguage: htmlLang,
+  about: { '@id': attrId },
+  publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.baseUrl },
+};
 ---
 
 <!doctype html>
@@ -213,7 +223,8 @@ const websiteLd = {
     ></script>
 
     <!-- Structured data -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionLd)}></script>
+    {pageType !== 'guide' && <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionLd)}></script>}
+    {pageType === 'guide' && <script type="application/ld+json" is:inline set:html={JSON.stringify(guideLd)}></script>}
     <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteLd)}></script>
     {pageType === 'attraction' && (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>

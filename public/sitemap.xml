@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Static sitemap: the three guide pages only.
+  Static sitemap: homepages and multilingual visitor guides.
   The privacy / terms / cookie pages are intentionally absent — they are
   noindex, follow and only exist so the policy links work.
   x-default points at the English guide, the version served to visitors whose
@@ -40,5 +40,53 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/guides/night-market-visit/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/guides/night-market-visit/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/guides/night-market-visit/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/guides/night-market-visit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/guides/night-market-visit/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/guides/night-market-visit/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/guides/night-market-visit/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/guides/shopping-and-crafts/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/guides/shopping-and-crafts/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/guides/shopping-and-crafts/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/guides/shopping-and-crafts/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/guides/shopping-and-crafts/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/guides/shopping-and-crafts/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/guides/shopping-and-crafts/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/guides/old-market-riverside-walk/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/guides/old-market-riverside-walk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/guides/old-market-riverside-walk/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/guides/old-market-riverside-walk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/guides/old-market-riverside-walk/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/guides/old-market-riverside-walk/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/guides/old-market-riverside-walk/</loc>
+    <lastmod>2026-11-16</lastmod><priority>0.7</priority>
   </url>
 </urlset>
