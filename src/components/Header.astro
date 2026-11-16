@@ -25,6 +25,7 @@ const siteName = messages.header.siteName;
 const isHome = ['/', '/en/', '/zh/'].includes(Astro.url.pathname);
 const homeHref = langHrefs[lang];
 const guideLabel: Record<string, string> = { km: 'មគ្គុទ្ទេសក៍', en: 'Guides', zh: '专题指南' };
+const nearbyLabel: Record<string, string> = { km: 'ទីកន្លែងជិតខាង', en: 'Nearby', zh: '周边景点' };
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-cream/85 backdrop-blur">
@@ -39,13 +40,14 @@ const guideLabel: Record<string, string> = { km: 'មគ្គុទ្ទេស
         navItems.map((item) => (
           <a
             href={isHome ? item.href : `${homeHref}${item.href}`}
-            class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark"
+            class="rounded-md px-2 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark"
           >
             {messages.header.nav[item.key]}
           </a>
         ))
       }
-      <a href={`${homeHref}#guides`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark">{guideLabel[lang]}</a>
+      <a href={`${homeHref}#nearby`} class="rounded-md px-2 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark">{nearbyLabel[lang]}</a>
+      <a href={`${homeHref}#guides`} class="rounded-md px-2 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark">{guideLabel[lang]}</a>
     </nav>
 
     <div class="flex items-center gap-1">
@@ -92,6 +94,7 @@ const guideLabel: Record<string, string> = { km: 'មគ្គុទ្ទេស
           </a>
         ))
       }
+      <a href={`${homeHref}#nearby`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand hover:text-brand-dark">{nearbyLabel[lang]}</a>
       <a href={`${homeHref}#guides`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand hover:text-brand-dark">{guideLabel[lang]}</a>
     </div>
   </nav>

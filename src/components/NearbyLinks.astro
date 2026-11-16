@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl } from '../i18n/ui';
+import { nearbySlugs, nearby } from '../data/nearby';
+const lang = getLangFromUrl(Astro.url);
+const prefix = lang === 'km' ? '' : `/${lang}`;
+const texts: Record<string, {title:string; intro:string; read:string}> = {
+  en:{title:'Explore the markets and riverside nearby',intro:'Five detailed local guides with separate map locations, history, walking routes and useful questions.',read:'Explore place'},
+  zh:{title:'周边探索：市场、酒吧街与暹粒河畔',intro:'5 组独立地点与游览攻略，分别提供地图、历史背景、路线和常见问题。',read:'查看详情'},
+  km:{title:'ស្វែងយល់ពីផ្សារ និងមាត់ស្ទឹងជិតខាង',intro:'មគ្គុទ្ទេសក៍ប្រាំមានផែនទី ប្រវត្តិ ផ្លូវដើរ និងសំណួរប្រចាំ។',read:'មើលទីកន្លែង'},
+};
+const t = texts[lang];
+---
+<section id="nearby" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-brown">{t.title}</h2><p class="mt-3 max-w-3xl leading-relaxed text-brown/70">{t.intro}</p>
+  <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{nearbySlugs.map((slug)=>{const item=nearby[slug];return <article class="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm"><a href={`${prefix}/nearby/${slug}/`}><img src={item.image} width="640" height="420" loading="lazy" alt={item.name} class="h-44 w-full object-cover" /></a><div class="p-5"><h3 class="text-lg font-bold text-brown"><a href={`${prefix}/nearby/${slug}/`} class="hover:text-brand-dark">{item.copy[lang].title}</a></h3><p class="mt-2 text-sm leading-relaxed text-brown/70">{item.copy[lang].tagline}</p><a class="mt-4 inline-block text-sm font-bold text-brand-dark underline underline-offset-4" href={`${prefix}/nearby/${slug}/`}>{t.read} →</a></div></article>})}</div>
+</section>
