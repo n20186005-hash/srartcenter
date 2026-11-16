@@ -1,0 +1,10 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { guideSlugs } from '../../../data/guides';
+export const prerender = true;
+export function getStaticPaths() {
+  return ['en', 'zh'].flatMap((lang) => guideSlugs.map((slug) => ({ params: { lang, slug } })));
+}
+const { lang, slug } = Astro.params;
+---
+<GuidePage lang={lang} slug={slug} />

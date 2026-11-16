@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { nearby, nearbySlugs, type NearbySlug } from '../data/nearby';
+const { lang, slug } = Astro.props as { lang: string; slug: NearbySlug };
+const item = nearby[slug];
+const c = item.copy[lang];
+const prefix = lang === 'km' ? '' : `/${lang}`;
+const translations: Record<string, Record<string, string>> = {
+  en: { home:'Home', explore:'Explore the area', advice:'Visiting advice', highlights:'Highlights', about:'About this place and its management', basics:'Visitor information', address:'Address', hours:'Opening times', admission:'Admission', transport:'How to get there', history:'History and local context', architecture:'Architecture and surroundings', culture:'Culture and experience', route:'Suggested walking route', photos:'Photography viewpoints', stay:'Where to stay nearby', reviews:'Visitor perspectives', faq:'Frequently asked questions', map:'Directions and map', source:'References and image source', mapButton:'View this exact place on Google Maps', change:'Schedules and access may change; check on site before travelling.', other:'More nearby places', back:'Back to the market guide' },
+  zh: { home:'首页', explore:'周边游览', advice:'游览建议', highlights:'景区特色', about:'关于景点与管理主体', basics:'基本信息', address:'具体地址', hours:'开放时间', admission:'门票与费用', transport:'交通方式', history:'历史背景', architecture:'建筑与周边环境', culture:'文化与游览体验', route:'建议步行路线', photos:'拍照机位', stay:'周边住宿建议', reviews:'游客体验参考', faq:'常见问题', map:'交通指南与地图', source:'参考资料与图片来源', mapButton:'打开该地点专属 Google 地图', change:'实际营业与通行可能变动，请在出行前现场核实。', other:'更多周边地点', back:'返回夜市首页' },
+  km: { home:'ទំព័រដើម', explore:'ស្វែងយល់ជុំវិញ', advice:'ការណែនាំទស្សនា', highlights:'ចំណុចពិសេស', about:'អំពីទីកន្លែង និងការគ្រប់គ្រង', basics:'ព័ត៌មានមូលដ្ឋាន', address:'អាសយដ្ឋាន', hours:'ម៉ោងបើក', admission:'សំបុត្រ និងតម្លៃ', transport:'ការធ្វើដំណើរ', history:'ប្រវត្តិ', architecture:'ស្ថាបត្យកម្ម និងជុំវិញ', culture:'វប្បធម៌ និងបទពិសោធន៍', route:'ផ្លូវដើរណែនាំ', photos:'កន្លែងថតរូប', stay:'កន្លែងស្នាក់នៅ', reviews:'បទពិសោធន៍អ្នកទស្សនា', faq:'សំណួរញឹកញាប់', map:'ផ្លូវ និងផែនទី', source:'ប្រភពព័ត៌មាន និងរូបភាព', mapButton:'បើកទីតាំងនេះនៅ Google Maps', change:'ម៉ោង និងផ្លូវអាចផ្លាស់ប្តូរ។ សូមពិនិត្យនៅទីតាំងជាក់ស្តែង។', other:'ទីកន្លែងជិតខាង', back:'ត្រឡប់ទៅផ្សាររាត្រី' },
+};
+const t = translations[lang];
+const hoursText: Record<string, Record<string, string>> = {
+  'old-market': {en:'Individual shop hours vary; daytime for active produce stalls',zh:'各商户时间不同；建议白天观察生鲜交易',km:'ម៉ោងតូបខុសគ្នា; ពេលថ្ងៃសម្រាប់តូបបន្លែ'},
+  'pub-street': {en:'Public road; venues set their own hours',zh:'公共街道全天可通行；各店营业时间不同',km:'ផ្លូវសាធារណៈ; ម៉ោងហាងខុសគ្នា'},
+  'siem-reap-riverside': {en:'Open public paths subject to local access',zh:'公共路段开放情况以现场为准',km:'ផ្លូវសាធារណៈតាមការបើកប្រើនៅទីតាំង'},
+  'made-in-cambodia-market': {en:'Check current schedule and entrance before travelling',zh:'请核查当前营业时间及入口',km:'សូមពិនិត្យម៉ោង និងច្រកចូលបច្ចុប្បន្ន'},
+  'night-market-transport-faq': {en:'Usually Mon–Sat 16:00–23:00; verify on site',zh:'常见周一至周六 16:00–23:00；现场核实',km:'ជាទូទៅចន្ទ–សៅរ៍ ១៦:០០–២៣:០០; ពិនិត្យផ្ទាល់'},
+};
+const admissionText: Record<string,string> = { en:'No general sightseeing ticket; purchases and services cost extra', zh:'通常无需观光门票；购物和服务另计', km:'ជាទូទៅគ្មានសំបុត្រទេសចរណ៍; ទំនិញ និងសេវាមានថ្លៃ' };
+const title = `${c.title} | Siem Reap Art Center Night Market`;
+const description = `${c.intro} ${c.tagline}`.slice(0,160);
+const placeLd = { '@context':'https://schema.org', '@type':item.kind === 'place' ? 'TouristAttraction' : 'Article', name:c.title, description, url:`https://www.srartcenter.com${prefix}/nearby/${slug}/`, image:`https://www.srartcenter.com${item.image}`, hasMap:item.maps, address: { '@type':'PostalAddress', streetAddress:item.address, addressCountry:'KH' } };
+---
+<BaseLayout title={title} description={description} pageType="guide">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(placeLd)} />
+  <main class="mx-auto max-w-6xl px-4 pb-14 pt-28 text-brown">
+    <nav aria-label="Breadcrumb" class="mb-5 text-sm text-brown/60"><a href={`${prefix}/`} class="hover:text-brand">{t.home}</a> / {t.explore} / {item.name}</nav>
+    <header class="rounded-3xl bg-sand p-6 sm:p-10">
+      <p class="text-sm font-semibold tracking-widest text-brand-dark">{t.explore} · Siem Reap, Cambodia</p>
+      <h1 class="mt-3 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl">{c.title}</h1>
+      <p class="mt-3 max-w-3xl text-lg text-brown/75">{c.tagline}</p>
+      <div class="mt-5 flex flex-wrap gap-3 text-sm"><span class="rounded-full bg-white px-3 py-2">📍 {item.address}</span><span class="rounded-full bg-white px-3 py-2">🕒 {hoursText[slug][lang]}</span></div>
+      <a href={item.maps} target="_blank" rel="noopener noreferrer" class="mt-6 inline-block rounded-full bg-brand px-5 py-3 font-bold text-white hover:bg-brand-dark">🗺️ {t.mapButton} ↗</a>
+    </header>
+    <figure class="mt-7 overflow-hidden rounded-2xl bg-sand"><img src={item.image} alt={`${item.name} — Siem Reap, Cambodia`} width="1000" height="670" loading="eager" class="max-h-[440px] w-full object-cover" /></figure>
+    <div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_290px]">
+      <article class="space-y-10 leading-8 text-brown/80">
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.explore}</h2><p>{c.intro}</p><h3 class="mt-6 text-xl font-bold text-brown">{t.advice}</h3><ul class="mt-3 list-disc space-y-1 pl-5">{c.advice.map((x) => <li>{x}</li>)}</ul><h3 class="mt-6 text-xl font-bold text-brown">{t.highlights}</h3><ul class="mt-3 list-disc space-y-1 pl-5">{c.highlights.map((x) => <li>{x}</li>)}</ul></section>
+        <section class="rounded-2xl border-l-4 border-brand bg-white p-7"><h2 class="mb-4 text-2xl font-bold text-brown">{t.about}</h2><p>{c.management}</p><p class="mt-4">{c.overview}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.basics}</h2><dl class="divide-y divide-black/10 rounded-xl border border-black/10 bg-white px-5"><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.address}</dt><dd class="sm:col-span-2">{item.address}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.hours}</dt><dd class="sm:col-span-2">{hoursText[slug][lang]}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.admission}</dt><dd class="sm:col-span-2">{admissionText[lang]}</dd></div></dl><p class="mt-4 text-sm">{t.change}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.transport}</h2><ul class="list-disc space-y-2 pl-5">{c.transport.map((x) => <li>{x}</li>)}</ul></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.history}</h2><p>{c.history}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.architecture}</h2><p>{c.architecture}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.culture}</h2><p>{c.culture}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.route}</h2><ol class="space-y-4">{c.route.map((x,i) => <li class="flex gap-4"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand font-bold text-white">{i+1}</span><span>{x}</span></li>)}</ol></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.photos}</h2><ul class="list-disc space-y-2 pl-5">{c.photos.map((x) => <li>{x}</li>)}</ul></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.stay}</h2><p>{c.stay}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.reviews}</h2><p>{t.change}</p><a href={item.maps} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-dark underline">Google Maps ↗</a></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.faq}</h2><div class="divide-y divide-black/10 rounded-2xl border border-black/10 bg-white px-6">{c.faq.map((x) => <div class="py-4"><h3 class="font-bold text-brown">{x.q}</h3><p class="mt-2">{x.a}</p></div>)}</div></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.map}</h2><p>{item.address}</p><a href={item.maps} target="_blank" rel="noopener noreferrer" class="font-bold text-brand-dark underline">{t.mapButton} ↗</a></section>
+        <section class="text-sm"><h2 class="mb-3 text-xl font-bold text-brown">{t.source}</h2><ul class="list-disc pl-5"><li><a href={item.maps} class="underline" target="_blank" rel="noopener noreferrer">Google Maps — {item.name}</a></li><li><a href={item.source} class="underline" target="_blank" rel="noopener noreferrer">Visitor information reference</a></li><li><a href={item.imageSource} class="underline" target="_blank" rel="noopener noreferrer">Photo source</a></li></ul></section>
+      </article>
+      <aside class="self-start rounded-2xl border border-black/5 bg-white p-6 shadow-sm lg:sticky lg:top-24"><h2 class="text-lg font-bold">{t.other}</h2><ul class="mt-4 space-y-4">{nearbySlugs.filter((s)=>s!==slug).map((s)=><li><a class="font-medium text-brand-dark underline underline-offset-4" href={`${prefix}/nearby/${s}/`}>{nearby[s].copy[lang].title}</a></li>)}</ul><a class="mt-6 block border-t border-black/10 pt-4 font-medium text-brand-dark" href={`${prefix}/`}>← {t.back}</a></aside>
+    </div>
+  </main>
+</BaseLayout>

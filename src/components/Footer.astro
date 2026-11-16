@@ -38,6 +38,8 @@ const legalHrefs: Record<string, string> = {
   terms: `${legalBase}/terms-of-service`,
   cookies: `${legalBase}/cookie-settings`,
 };
+const isHome = ['/', '/en/', '/zh/'].includes(Astro.url.pathname);
+const homeHref = langHrefs[lang];
 ---
 
 <footer class="mt-8 bg-[#2B1A12] text-orange-50">
@@ -78,7 +80,7 @@ const legalHrefs: Record<string, string> = {
         {
           sectionNav.map((item) => (
             <li>
-              <a href={item.href} class="text-orange-100/80 transition hover:text-white">
+              <a href={isHome ? item.href : `${homeHref}${item.href}`} class="text-orange-100/80 transition hover:text-white">
                 {messages.header.nav[item.key]}
               </a>
             </li>
