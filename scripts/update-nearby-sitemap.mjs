@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const file = resolve('public/sitemap.xml');
-const slugs = ['old-market','pub-street','siem-reap-riverside','made-in-cambodia-market','night-market-transport-faq','wat-damnak','wat-preah-prom-rath','wat-bo','royal-independence-gardens','angkor-national-museum','artisans-angkor'];
+const slugs = ['old-market','pub-street','siem-reap-riverside','made-in-cambodia-market','night-market-transport-faq','wat-damnak','wat-preah-prom-rath','wat-bo','royal-independence-gardens','angkor-national-museum','artisans-angkor','satcha-handicraft-center','khmer-ceramics-center','preah-ang-chek-chorm-shrine','phare-cambodian-circus'];
 const base = 'https://www.srartcenter.com';
 const prefixes = ['', '/en', '/zh'];
 const start = '<!-- GENERATED NEARBY START -->';

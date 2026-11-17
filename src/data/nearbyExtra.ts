@@ -1,7 +1,8 @@
 import type { Place, Copy } from './nearby';
 import { extraMore } from './nearbyExtraMore';
+import { newestNearby } from './nearbyNewest';
 
-export const extraSlugs = ['wat-damnak', 'wat-preah-prom-rath', 'wat-bo', 'royal-independence-gardens', 'angkor-national-museum', 'artisans-angkor'] as const;
+export const extraSlugs = ['wat-damnak', 'wat-preah-prom-rath', 'wat-bo', 'royal-independence-gardens', 'angkor-national-museum', 'artisans-angkor', 'satcha-handicraft-center', 'khmer-ceramics-center', 'preah-ang-chek-chorm-shrine', 'phare-cambodian-circus'] as const;
 const mapSearch = (name: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
 const make = (x: Copy) => x;
 
@@ -112,4 +113,5 @@ export const extraNearby: Record<typeof extraSlugs[number], Place> = {
     },
   },
   ...extraMore,
+  ...newestNearby,
 };

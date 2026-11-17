@@ -26,6 +26,10 @@ const extraHours: Record<string, Record<string,string>> = {
   'royal-independence-gardens': {zh:'公共花园，开放情况以现场公告为准',km:'សួនសាធារណៈ; ពិនិត្យការបើកនៅទីតាំង'},
   'angkor-national-museum': {zh:'常见开放时间 08:30–18:00；以官方公告为准',km:'ជាទូទៅ ០៨:៣០–១៨:០០; ពិនិត្យប្រកាសផ្លូវការ'},
   'artisans-angkor': {zh:'作坊与参观项目时间以运营方公告为准',km:'ម៉ោងសិក្ខាសាលានិងទស្សនាអាស្រ័យលើអ្នកប្រតិបត្តិ'},
+  'satcha-handicraft-center': {zh:'工坊及展区开放时间以运营方公告为准',km:'ម៉ោងសិក្ខាសាលា និងបន្ទប់បង្ហាញអាស្រ័យអ្នកប្រតិបត្តិ'},
+  'khmer-ceramics-center': {zh:'工坊开放及预约课程时间以现场为准',km:'ម៉ោងសិក្ខាសាលា និងថ្នាក់កក់អាស្រ័យទីតាំង'},
+  'preah-ang-chek-chorm-shrine': {zh:'宗教场所，开放及仪式安排以现场为准',km:'ទីសក្ការៈ; ម៉ោងនិងពិធីអាស្រ័យទីតាំង'},
+  'phare-cambodian-circus': {zh:'按官方公布的演出场次开放，建议提前订票',km:'បើកតាមកាលវិភាគសម្ដែងផ្លូវការ; គួរកក់សំបុត្រ'},
 };
 const extraAdmissions: Record<string, Record<string,string>> = {
   'wat-damnak':{zh:'未见固定观光门票；请遵守寺院现场规定',km:'មិនមានព័ត៌មានសំបុត្រទេសចរណ៍ថេរ; គោរពបទបញ្ជាវត្ត'},
@@ -34,6 +38,10 @@ const extraAdmissions: Record<string, Record<string,string>> = {
   'royal-independence-gardens':{zh:'公共区域通常免费；活动另有安排',km:'ទីធ្លាសាធារណៈជាទូទៅឥតគិតថ្លៃ; ព្រឹត្តិការណ៍អាចខុសគ្នា'},
   'angkor-national-museum':{zh:'设有收费门票；票价请查询博物馆官方渠道',km:'មានសំបុត្រចូល; សូមពិនិត្យតម្លៃតាមសារមន្ទីរ'},
   'artisans-angkor':{zh:'参观项目费用可能不同，请咨询运营方',km:'តម្លៃកម្មវិធីអាចខុសគ្នា; សូមសួរអ្នកប្រតិបត្តិ'},
+  'satcha-handicraft-center':{zh:'部分体验项目或购物收费，以运营方为准',km:'កម្មវិធីខ្លះ និងការទិញទំនិញមានថ្លៃ; សូមសួរផ្ទាល់'},
+  'khmer-ceramics-center':{zh:'制陶课程需要付费；展区规则另行核对',km:'ថ្នាក់សេរ៉ាមិចមានថ្លៃ; ពិនិត្យលក្ខខណ្ឌបន្ទប់បង្ហាញ'},
+  'preah-ang-chek-chorm-shrine':{zh:'供奉自愿，具体参观规则以现场为准',km:'តង្វាយតាមសទ្ធា; សូមពិនិត្យបទបញ្ជានៅទីតាំង'},
+  'phare-cambodian-circus':{zh:'演出需购票；查询官方票价及座位类别',km:'ការសម្ដែងត្រូវការសំបុត្រ; ពិនិត្យតម្លៃផ្លូវការ'},
 };
 const displayHours = hoursText[slug]?.[lang] ?? extraHours[slug]?.[lang] ?? item.hours;
 const displayAdmission = extraAdmissions[slug]?.[lang] ?? (item.kind === 'guide' ? admissionText[lang] : item.admission);
