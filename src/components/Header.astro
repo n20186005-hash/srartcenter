@@ -26,8 +26,6 @@ const isHome = ['/', '/en/', '/zh/'].includes(Astro.url.pathname);
 const homeHref = langHrefs[lang];
 const guideLabel: Record<string, string> = { km: 'មគ្គុទ្ទេសក៍', en: 'Guides', zh: '专题指南' };
 const nearbyLabel: Record<string, string> = { km: 'ទីកន្លែងជិតខាង', en: 'Nearby', zh: '周边景点' };
-const infoLabel: Record<string, string> = { km: 'ព័ត៌មានគេហទំព័រ', en: 'Site information', zh: '站点信息' };
-const imageLabel: Record<string, string> = { km: 'ប្រភពរូបភាព', en: 'Image credits', zh: '图片版权' };
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-cream/85 backdrop-blur">
@@ -50,14 +48,6 @@ const imageLabel: Record<string, string> = { km: 'ប្រភពរូបភា
       }
       <a href={`${homeHref}#nearby`} class="rounded-md px-2 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark">{nearbyLabel[lang]}</a>
       <a href={`${homeHref}#guides`} class="rounded-md px-2 py-2 text-sm font-medium text-brown/80 transition hover:bg-sand hover:text-brand-dark">{guideLabel[lang]}</a>
-      <details class="group relative text-sm text-brown/80">
-        <summary class="cursor-pointer list-none rounded-md px-2 py-2 font-medium hover:bg-sand hover:text-brand-dark">{infoLabel[lang]} ▾</summary>
-        <div class="absolute right-0 top-full z-50 min-w-36 rounded-xl border border-black/10 bg-cream p-2 shadow-lg">
-          <a class="block rounded-md px-3 py-2 hover:bg-sand" href={`${homeHref}reviews/`}>{messages.header.nav.reviews}</a>
-          <a class="block rounded-md px-3 py-2 hover:bg-sand" href={`${homeHref}sources/`}>{messages.header.nav.sources}</a>
-          <a class="block rounded-md px-3 py-2 hover:bg-sand" href={`${homeHref}image-credits/`}>{imageLabel[lang]}</a>
-        </div>
-      </details>
     </nav>
 
     <div class="flex items-center gap-1">
@@ -106,9 +96,6 @@ const imageLabel: Record<string, string> = { km: 'ប្រភពរូបភា
       }
       <a href={`${homeHref}#nearby`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand hover:text-brand-dark">{nearbyLabel[lang]}</a>
       <a href={`${homeHref}#guides`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand hover:text-brand-dark">{guideLabel[lang]}</a>
-      <a href={`${homeHref}reviews/`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand">{messages.header.nav.reviews}</a>
-      <a href={`${homeHref}sources/`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand">{messages.header.nav.sources}</a>
-      <a href={`${homeHref}image-credits/`} class="rounded-md px-3 py-2 text-sm font-medium text-brown/80 hover:bg-sand">{imageLabel[lang]}</a>
     </div>
   </nav>
 </header>

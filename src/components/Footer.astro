@@ -14,6 +14,7 @@ const legalHrefs: Record<string, string> = {
   terms: `${legalBase}/terms-of-service`,
   cookies: `${legalBase}/cookie-settings`,
 };
+const imageLabel: Record<string, string> = { km: 'ប្រភពរូបភាព', en: 'Image credits', zh: '图片版权' };
 ---
 
 <footer class="mt-8 bg-[#2B1A12] text-orange-50">
@@ -21,6 +22,9 @@ const legalHrefs: Record<string, string> = {
     <p>{rights}</p>
     <p>{f.disclaimer}</p>
     <ul class="flex flex-wrap gap-4 text-xs sm:justify-end">
+      <li><a href={`${legalBase}/reviews/`} class="transition hover:text-white">{messages.header.nav.reviews}</a></li>
+      <li><a href={`${legalBase}/sources/`} class="transition hover:text-white">{messages.header.nav.sources}</a></li>
+      <li><a href={`${legalBase}/image-credits/`} class="transition hover:text-white">{imageLabel[lang]}</a></li>
       <li><a href={legalHrefs.privacy} class="transition hover:text-white">{f.links.privacy}</a></li>
       <li><a href={legalHrefs.terms} class="transition hover:text-white">{f.links.terms}</a></li>
       <li><a href={legalHrefs.cookies} class="transition hover:text-white">{f.links.cookies}</a></li>
