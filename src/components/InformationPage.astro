@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sources from './Sources.astro';
+import Reviews from './Reviews.astro';
+import { getI18n } from '../i18n/ui';
+
+const { section } = Astro.props as { section: 'sources' | 'reviews' | 'image-credits' };
+const { lang, messages } = getI18n(Astro.url);
+const prefix = lang === 'km' ? '' : `/${lang}`;
+const labels: Record<string, Record<string, string>> = {
+  en: { sources: 'Sources', reviews: 'Ratings and reviews', 'image-credits': 'Image credits', home: 'Home', intro: 'Photography and image ownership information', photo: 'Original market photo gallery', location: 'Market location', credits: 'The images shown on this guide belong to their original photographers. The guide does not claim ownership of these images.' },
+  zh: { sources: '资料来源', reviews: '评分与评价', 'image-credits': '图片来源及版权', home: '首页', intro: '本站图片来源与产权说明', photo: '夜市实景图库', location: '夜市地图位置', credits: '本网站所展示的所有图片产权及版权均归原摄影者所有。本站不对这些图片主张所有权。' },
+  km: { sources: 'ប្រភពព័ត៌មាន', reviews: 'ពិន្ទុ និងមតិ', 'image-credits': 'ប្រភពរូបភាព និងសិទ្ធិ', home: 'ទំព័រដើម', intro: 'ព័ត៌មានអំពីប្រភពរូបភាព និងកម្មសិទ្ធិ', photo: 'រូបភាពផ្សាររាត្រី', location: 'ទីតាំងផ្សារ', credits: 'រូបភាពទាំងអស់នៅលើគេហទំព័រនេះជាកម្មសិទ្ធិ និងមានសិទ្ធិអ្នកនិពន្ធរបស់អ្នកថតរូបដើម។ គេហទំព័រនេះមិនអះអាងកម្មសិទ្ធិរូបភាពទាំងនោះទេ។' },
+};
+const t = labels[lang];
+const heading = t[section];
+---
+<BaseLayout title={`${heading} | ${messages.header.siteName}`} description={section === 'image-credits' ? t.intro : section === 'reviews' ? messages.reviews.intro : messages.sources.intro} pageType="guide">
+  <main class="pt-24">
+    <nav class="mx-auto max-w-6xl px-4 pt-4 text-sm text-brown/60" aria-label="Breadcrumb"><a href={`${prefix}/`} class="hover:text-brand-dark">{t.home}</a> / {heading}</nav>
+    {section !== 'image-credits' && <h1 class="sr-only">{heading}</h1>}
+    {section === 'sources' && <Sources />}
+    {section === 'reviews' && <Reviews />}
+    {section === 'image-credits' && <section class="anchor-offset mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-3xl border border-black/5 bg-sand/50 p-6 shadow-sm sm:p-8">
+        <h1 class="text-3xl font-bold text-brown">{heading}</h1>
+        <p class="mt-4 max-w-3xl leading-relaxed text-brown/75">{t.credits}</p>
+        <h2 class="mt-8 text-xl font-bold text-brown">{t.photo}</h2>
+        <p class="mt-2 text-brown/70">{messages.sources.imagesNote}</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">{[1,2,3].map((i) => <img src={`/gallery/siem-reap-art-center-night-market-${i}.webp`} alt={`${messages.header.siteName} ${i}`} width="640" height="420" loading="lazy" class="h-48 w-full rounded-xl object-cover" />)}</div>
+        <p class="mt-6 text-sm text-brown/70">{t.location}: <a href="https://maps.app.goo.gl/cawVtxVppm8w1Hm1A" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-dark underline">Google Maps ↗</a></p>
+      </div>
+    </section>}
+    <nav class="mx-auto flex max-w-6xl flex-wrap gap-5 px-4 pb-12 text-sm font-semibold text-brand-dark" aria-label="Related information">
+      {(['sources','reviews','image-credits'] as const).filter((x) => x !== section).map((x) => <a href={`${prefix}/${x}/`} class="underline underline-offset-4">{t[x]}</a>)}
+      <a href={`${prefix}/`} class="underline underline-offset-4">← {t.home}</a>
+    </nav>
+  </main>
+</BaseLayout>

@@ -5,6 +5,14 @@ import { attraction, siteConfig } from '../config/site';
 const { messages } = getI18n(Astro.url);
 const s = messages.sources;
 const year = new Date().getFullYear();
+const govtLead: Record<string, { first: string; and: string; last: string }> = {
+  km: { first: 'សម្រាប់ព័ត៌មានទេសចរណ៍ថ្មី សូមមើល', and: 'និង', last: '។' },
+  en: { first: 'For current tourism information, see', and: 'and', last: '.' },
+  zh: { first: '如需了解官方及地区旅游资讯，请参阅', and: '以及', last: '。' },
+};
+const { lang } = getI18n(Astro.url);
+const g = govtLead[lang];
+const prefix = lang === 'km' ? '' : `/${lang}`;
 ---
 
 <section id="sources" class="anchor-offset mx-auto max-w-6xl px-4 py-14">
@@ -57,7 +65,7 @@ const year = new Date().getFullYear();
       <div class="rounded-2xl border border-black/5 bg-white p-5">
         <dt class="text-sm font-semibold text-brown">{s.govtLabel}</dt>
         <dd class="mt-2 text-sm leading-relaxed text-brown/70">
-          {s.govtValue}. For official updates and regional tourism information, visit{' '}
+          {s.govtValue}。 {g.first}{' '}
           <a
             href={attraction.govtTourismUrl}
             target="_blank"
@@ -66,7 +74,7 @@ const year = new Date().getFullYear();
           >
             {s.govtLinkLabel}
           </a>{' '}
-          and the{' '}
+          {g.and}{' '}
           <a
             href={attraction.govtTourismOrgUrl}
             target="_blank"
@@ -74,7 +82,7 @@ const year = new Date().getFullYear();
             class="font-semibold text-brand-dark underline decoration-brand/40 underline-offset-2 transition hover:text-brand"
           >
             {s.govtOrgLinkLabel}
-          </a>.
+          </a>{g.last}
         </dd>
       </div>
 
@@ -102,13 +110,9 @@ const year = new Date().getFullYear();
         <dd class="mt-2 text-xs leading-relaxed text-brown/55">{s.dataNote}</dd>
       </div>
 
-      <!-- Image ownership -->
-      <div class="rounded-2xl border border-black/5 bg-white p-5">
-        <dt class="text-sm font-semibold text-brown">{s.imagesLabel}</dt>
-        <dd class="mt-2 text-sm leading-relaxed text-brown/70">{s.imagesValue}</dd>
-        <dd class="mt-2 text-xs leading-relaxed text-brown/55">{s.imagesNote}</dd>
-      </div>
     </dl>
+
+    <a class="mt-6 inline-block text-sm font-semibold text-brand-dark underline underline-offset-4" href={`${prefix}/image-credits/`}>{s.imagesLabel} ↗</a>
 
     <p class="mt-6 text-xs leading-relaxed text-brown/55">{s.note}</p>
     <p class="mt-2 text-xs text-brown/45">

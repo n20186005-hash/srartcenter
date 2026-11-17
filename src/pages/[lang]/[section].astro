@@ -1,0 +1,7 @@
+---
+import InformationPage from '../../components/InformationPage.astro';
+export const prerender = true;
+export function getStaticPaths() { return ['en','zh'].flatMap((lang) => ['sources','reviews','image-credits'].map((section) => ({params: {lang,section}}))); }
+const { section } = Astro.params;
+---
+<InformationPage section={section} />
