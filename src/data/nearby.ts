@@ -1,12 +1,13 @@
-export const nearbySlugs = ['old-market', 'pub-street', 'siem-reap-riverside', 'made-in-cambodia-market', 'night-market-transport-faq'] as const;
+import { extraNearby, extraSlugs } from './nearbyExtra';
+export const nearbySlugs = ['old-market', 'pub-street', 'siem-reap-riverside', 'made-in-cambodia-market', 'night-market-transport-faq', ...extraSlugs] as const;
 export type NearbySlug = typeof nearbySlugs[number];
-type Copy = {
+export type Copy = {
   title: string; tagline: string; intro: string; management: string; overview: string;
   highlights: string[]; history: string; architecture: string; culture: string;
   advice: string[]; route: string[]; photos: string[]; transport: string[];
   faq: { q: string; a: string }[]; stay: string;
 };
-type Place = {
+export type Place = {
   name: string; address: string; maps: string; image: string; imageSource: string;
   kind: 'place' | 'guide'; hours: string; admission: string; source: string;
   copy: Record<string, Copy>;
@@ -298,4 +299,5 @@ export const nearby: Record<NearbySlug, Place> = {
       },
     },
   },
+  ...extraNearby,
 };

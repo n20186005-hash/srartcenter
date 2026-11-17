@@ -4,9 +4,9 @@ import { nearbySlugs, nearby } from '../data/nearby';
 const lang = getLangFromUrl(Astro.url);
 const prefix = lang === 'km' ? '' : `/${lang}`;
 const texts: Record<string, {title:string; intro:string; read:string}> = {
-  en:{title:'Explore the markets and riverside nearby',intro:'Five detailed local guides with separate map locations, history, walking routes and useful questions.',read:'Explore place'},
-  zh:{title:'周边探索：市场、酒吧街与暹粒河畔',intro:'5 组独立地点与游览攻略，分别提供地图、历史背景、路线和常见问题。',read:'查看详情'},
-  km:{title:'ស្វែងយល់ពីផ្សារ និងមាត់ស្ទឹងជិតខាង',intro:'មគ្គុទ្ទេសក៍ប្រាំមានផែនទី ប្រវត្តិ ផ្លូវដើរ និងសំណួរប្រចាំ។',read:'មើលទីកន្លែង'},
+  en:{title:'Explore nearby markets, temples, museums and riverside',intro:'Eleven detailed local guides, each with its own map location, history, walking route and visitor questions.',read:'Explore place'},
+  zh:{title:'周边探索：市场、寺院、博物馆与暹粒河畔',intro:'11 组独立地点与游览攻略，各有专属地图、历史背景、步行路线和常见问题。',read:'查看详情'},
+  km:{title:'ស្វែងយល់ពីផ្សារ វត្ត សារមន្ទីរ និងមាត់ស្ទឹង',intro:'មគ្គុទ្ទេសក៍ ១១ កន្លែង មានផែនទី ប្រវត្តិ ផ្លូវដើរ និងសំណួរសម្រាប់អ្នកទស្សនា។',read:'មើលទីកន្លែង'},
 };
 const t = texts[lang];
 ---

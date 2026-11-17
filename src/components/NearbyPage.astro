@@ -19,6 +19,24 @@ const hoursText: Record<string, Record<string, string>> = {
   'night-market-transport-faq': {en:'Usually Mon–Sat 16:00–23:00; verify on site',zh:'常见周一至周六 16:00–23:00；现场核实',km:'ជាទូទៅចន្ទ–សៅរ៍ ១៦:០០–២៣:០០; ពិនិត្យផ្ទាល់'},
 };
 const admissionText: Record<string,string> = { en:'No general sightseeing ticket; purchases and services cost extra', zh:'通常无需观光门票；购物和服务另计', km:'ជាទូទៅគ្មានសំបុត្រទេសចរណ៍; ទំនិញ និងសេវាមានថ្លៃ' };
+const extraHours: Record<string, Record<string,string>> = {
+  'wat-damnak': {zh:'开放范围视寺院礼佛及活动安排而定',km:'ការចូលទស្សនាអាស្រ័យលើពិធី និងបទបញ្ជាវត្ត'},
+  'wat-preah-prom-rath': {zh:'佛教寺院，参观时间以现场为准',km:'វត្តពុទ្ធសាសនា; សូមពិនិត្យម៉ោងនៅទីតាំង'},
+  'wat-bo': {zh:'仍在使用的寺院，宗教活动优先',km:'វត្តកំពុងប្រើប្រាស់; ពិធីសាសនាមានអាទិភាព'},
+  'royal-independence-gardens': {zh:'公共花园，开放情况以现场公告为准',km:'សួនសាធារណៈ; ពិនិត្យការបើកនៅទីតាំង'},
+  'angkor-national-museum': {zh:'常见开放时间 08:30–18:00；以官方公告为准',km:'ជាទូទៅ ០៨:៣០–១៨:០០; ពិនិត្យប្រកាសផ្លូវការ'},
+  'artisans-angkor': {zh:'作坊与参观项目时间以运营方公告为准',km:'ម៉ោងសិក្ខាសាលានិងទស្សនាអាស្រ័យលើអ្នកប្រតិបត្តិ'},
+};
+const extraAdmissions: Record<string, Record<string,string>> = {
+  'wat-damnak':{zh:'未见固定观光门票；请遵守寺院现场规定',km:'មិនមានព័ត៌មានសំបុត្រទេសចរណ៍ថេរ; គោរពបទបញ្ជាវត្ត'},
+  'wat-preah-prom-rath':{zh:'未见固定观光门票；供奉另计',km:'មិនមានព័ត៌មានសំបុត្រថេរ; ការបរិច្ចាគដោយឡែក'},
+  'wat-bo':{zh:'未见固定观光门票；请现场核实',km:'មិនមានព័ត៌មានសំបុត្រថេរ; សូមពិនិត្យផ្ទាល់'},
+  'royal-independence-gardens':{zh:'公共区域通常免费；活动另有安排',km:'ទីធ្លាសាធារណៈជាទូទៅឥតគិតថ្លៃ; ព្រឹត្តិការណ៍អាចខុសគ្នា'},
+  'angkor-national-museum':{zh:'设有收费门票；票价请查询博物馆官方渠道',km:'មានសំបុត្រចូល; សូមពិនិត្យតម្លៃតាមសារមន្ទីរ'},
+  'artisans-angkor':{zh:'参观项目费用可能不同，请咨询运营方',km:'តម្លៃកម្មវិធីអាចខុសគ្នា; សូមសួរអ្នកប្រតិបត្តិ'},
+};
+const displayHours = hoursText[slug]?.[lang] ?? extraHours[slug]?.[lang] ?? item.hours;
+const displayAdmission = extraAdmissions[slug]?.[lang] ?? (item.kind === 'guide' ? admissionText[lang] : item.admission);
 const title = `${c.title} | Siem Reap Art Center Night Market`;
 const description = `${c.intro} ${c.tagline}`.slice(0,160);
 const placeLd = { '@context':'https://schema.org', '@type':item.kind === 'place' ? 'TouristAttraction' : 'Article', name:c.title, description, url:`https://www.srartcenter.com${prefix}/nearby/${slug}/`, image:`https://www.srartcenter.com${item.image}`, hasMap:item.maps, address: { '@type':'PostalAddress', streetAddress:item.address, addressCountry:'KH' } };
@@ -31,7 +49,7 @@ const placeLd = { '@context':'https://schema.org', '@type':item.kind === 'place'
       <p class="text-sm font-semibold tracking-widest text-brand-dark">{t.explore} · Siem Reap, Cambodia</p>
       <h1 class="mt-3 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl">{c.title}</h1>
       <p class="mt-3 max-w-3xl text-lg text-brown/75">{c.tagline}</p>
-      <div class="mt-5 flex flex-wrap gap-3 text-sm"><span class="rounded-full bg-white px-3 py-2">📍 {item.address}</span><span class="rounded-full bg-white px-3 py-2">🕒 {hoursText[slug][lang]}</span></div>
+      <div class="mt-5 flex flex-wrap gap-3 text-sm"><span class="rounded-full bg-white px-3 py-2">📍 {item.address}</span><span class="rounded-full bg-white px-3 py-2">🕒 {displayHours}</span></div>
       <a href={item.maps} target="_blank" rel="noopener noreferrer" class="mt-6 inline-block rounded-full bg-brand px-5 py-3 font-bold text-white hover:bg-brand-dark">🗺️ {t.mapButton} ↗</a>
     </header>
     <figure class="mt-7 overflow-hidden rounded-2xl bg-sand"><img src={item.image} alt={`${item.name} — Siem Reap, Cambodia`} width="1000" height="670" loading="eager" class="max-h-[440px] w-full object-cover" /></figure>
@@ -39,7 +57,7 @@ const placeLd = { '@context':'https://schema.org', '@type':item.kind === 'place'
       <article class="space-y-10 leading-8 text-brown/80">
         <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.explore}</h2><p>{c.intro}</p><h3 class="mt-6 text-xl font-bold text-brown">{t.advice}</h3><ul class="mt-3 list-disc space-y-1 pl-5">{c.advice.map((x) => <li>{x}</li>)}</ul><h3 class="mt-6 text-xl font-bold text-brown">{t.highlights}</h3><ul class="mt-3 list-disc space-y-1 pl-5">{c.highlights.map((x) => <li>{x}</li>)}</ul></section>
         <section class="rounded-2xl border-l-4 border-brand bg-white p-7"><h2 class="mb-4 text-2xl font-bold text-brown">{t.about}</h2><p>{c.management}</p><p class="mt-4">{c.overview}</p></section>
-        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.basics}</h2><dl class="divide-y divide-black/10 rounded-xl border border-black/10 bg-white px-5"><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.address}</dt><dd class="sm:col-span-2">{item.address}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.hours}</dt><dd class="sm:col-span-2">{hoursText[slug][lang]}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.admission}</dt><dd class="sm:col-span-2">{admissionText[lang]}</dd></div></dl><p class="mt-4 text-sm">{t.change}</p></section>
+        <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.basics}</h2><dl class="divide-y divide-black/10 rounded-xl border border-black/10 bg-white px-5"><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.address}</dt><dd class="sm:col-span-2">{item.address}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.hours}</dt><dd class="sm:col-span-2">{displayHours}</dd></div><div class="grid gap-2 py-3 sm:grid-cols-3"><dt class="font-bold">{t.admission}</dt><dd class="sm:col-span-2">{displayAdmission}</dd></div></dl><p class="mt-4 text-sm">{t.change}</p></section>
         <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.transport}</h2><ul class="list-disc space-y-2 pl-5">{c.transport.map((x) => <li>{x}</li>)}</ul></section>
         <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.history}</h2><p>{c.history}</p></section>
         <section><h2 class="mb-4 text-2xl font-bold text-brown">{t.architecture}</h2><p>{c.architecture}</p></section>

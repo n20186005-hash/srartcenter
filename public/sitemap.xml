@@ -89,6 +89,31 @@
     <loc>https://www.srartcenter.com/zh/guides/old-market-riverside-walk/</loc>
     <lastmod>2026-11-16</lastmod><priority>0.7</priority>
   </url>
+<!-- Site information pages -->
+  <url>
+    <loc>https://www.srartcenter.com/sources/</loc><lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/sources/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/sources/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/sources/" />
+  </url>
+  <url><loc>https://www.srartcenter.com/en/sources/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://www.srartcenter.com/zh/sources/</loc><lastmod>2026-11-17</lastmod></url>
+  <url>
+    <loc>https://www.srartcenter.com/reviews/</loc><lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/reviews/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/reviews/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/reviews/" />
+  </url>
+  <url><loc>https://www.srartcenter.com/en/reviews/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://www.srartcenter.com/zh/reviews/</loc><lastmod>2026-11-17</lastmod></url>
+  <url>
+    <loc>https://www.srartcenter.com/image-credits/</loc><lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/image-credits/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/image-credits/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/image-credits/" />
+  </url>
+  <url><loc>https://www.srartcenter.com/en/image-credits/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://www.srartcenter.com/zh/image-credits/</loc><lastmod>2026-11-17</lastmod></url>
 <!-- GENERATED NEARBY START -->
   <url>
     <loc>https://www.srartcenter.com/nearby/old-market/</loc>
@@ -225,30 +250,167 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/night-market-transport-faq/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/night-market-transport-faq/" />
   </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/wat-damnak/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/wat-damnak/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/wat-damnak/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-damnak/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-damnak/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/wat-preah-prom-rath/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/wat-preah-prom-rath/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-preah-prom-rath/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-preah-prom-rath/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/wat-bo/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/wat-bo/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/wat-bo/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/wat-bo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/wat-bo/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/royal-independence-gardens/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/royal-independence-gardens/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/royal-independence-gardens/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/royal-independence-gardens/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/royal-independence-gardens/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/angkor-national-museum/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/angkor-national-museum/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/angkor-national-museum/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/angkor-national-museum/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/angkor-national-museum/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/nearby/artisans-angkor/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/en/nearby/artisans-angkor/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+  </url>
+  <url>
+    <loc>https://www.srartcenter.com/zh/nearby/artisans-angkor/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/nearby/artisans-angkor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.srartcenter.com/en/nearby/artisans-angkor/" />
+  </url>
 <!-- GENERATED NEARBY END -->
-  <!-- Site information pages -->
-  <url>
-    <loc>https://www.srartcenter.com/sources/</loc><lastmod>2026-11-17</lastmod>
-    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/sources/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/sources/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/sources/" />
-  </url>
-  <url><loc>https://www.srartcenter.com/en/sources/</loc><lastmod>2026-11-17</lastmod></url>
-  <url><loc>https://www.srartcenter.com/zh/sources/</loc><lastmod>2026-11-17</lastmod></url>
-  <url>
-    <loc>https://www.srartcenter.com/reviews/</loc><lastmod>2026-11-17</lastmod>
-    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/reviews/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/reviews/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/reviews/" />
-  </url>
-  <url><loc>https://www.srartcenter.com/en/reviews/</loc><lastmod>2026-11-17</lastmod></url>
-  <url><loc>https://www.srartcenter.com/zh/reviews/</loc><lastmod>2026-11-17</lastmod></url>
-  <url>
-    <loc>https://www.srartcenter.com/image-credits/</loc><lastmod>2026-11-17</lastmod>
-    <xhtml:link rel="alternate" hreflang="km" href="https://www.srartcenter.com/image-credits/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.srartcenter.com/en/image-credits/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.srartcenter.com/zh/image-credits/" />
-  </url>
-  <url><loc>https://www.srartcenter.com/en/image-credits/</loc><lastmod>2026-11-17</lastmod></url>
-  <url><loc>https://www.srartcenter.com/zh/image-credits/</loc><lastmod>2026-11-17</lastmod></url>
 </urlset>
